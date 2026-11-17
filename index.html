@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ESCAPE HOLIDAYS | Online Visa & Travel Consultancy — Thailand, Malaysia & Indonesia</title>
-  <meta name="description" content="ESCAPE HOLIDAYS - 100% Online Pakistani Travel & Visa Consultancy for Thailand, Malaysia & Indonesia. All Visa Types, Max 2 Weeks Processing, Urgent Visas, Hotels & Flights. 24/7 WhatsApp: 0314-8351871." />
+  <title>ESCAPE HOLIDAYS | Online Visa & Travel Consultancy — Thailand, Malaysia, Indonesia & Azerbaijan</title>
+  <meta name="description" content="ESCAPE HOLIDAYS - 100% Online Pakistani Travel & Visa Consultancy for Thailand, Malaysia, Indonesia & Azerbaijan. All Visa Types, Max 2 Weeks Processing, Urgent Visas, Hotels & Flights. 24/7 WhatsApp: 0314-8351871." />
 
   <!-- Google Fonts: Plus Jakarta Sans & Space Grotesk -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -158,7 +158,7 @@
       100% { background-position: 0% 50%; }
     }
 
-    /* #3 Orbiting Dotted Rings with TH, MY, ID Badges */
+    /* #3 Orbiting Dotted Rings with 4 Country Badges + Aeroplanes */
     @keyframes spinCW {
       from { transform: rotate(0deg); }
       to { transform: rotate(360deg); }
@@ -175,6 +175,9 @@
 
     .orbit-ring-3 { animation: spinCW 34s linear infinite; }
     .orbit-badge-3 { animation: spinCCW 34s linear infinite; }
+
+    .orbit-ring-4 { animation: spinCCW 40s linear infinite; }
+    .orbit-badge-4 { animation: spinCW 40s linear infinite; }
 
     /* #4 Central Glowing Globe Bobbing + Plane Wobble */
     @keyframes globeBob {
@@ -460,7 +463,7 @@
 
     <!-- Mobile Navigation Drawer -->
     <div id="mobileMenuDrawer" class="hidden lg:hidden bg-midnight-900/95 backdrop-blur-xl border-t border-white/10 px-4 pt-3 pb-6 space-y-2">
-      <a href="#destinations" class="mob-link block px-4 py-3 rounded-xl text-slate-200 hover:bg-white/5 font-semibold">Destinations (TH • MY • ID)</a>
+      <a href="#destinations" class="mob-link block px-4 py-3 rounded-xl text-slate-200 hover:bg-white/5 font-semibold">Destinations (Thailand • Malaysia • Indonesia • Azerbaijan)</a>
       <a href="#rules" class="mob-link block px-4 py-3 rounded-xl text-slate-200 hover:bg-white/5 font-semibold">Mandatory Visa Rules</a>
       <a href="#visa-finder" class="mob-link block px-4 py-3 rounded-xl text-slate-200 hover:bg-white/5 font-semibold">Interactive Visa Finder</a>
       <a href="#how-it-works" class="mob-link block px-4 py-3 rounded-xl text-slate-200 hover:bg-white/5 font-semibold">How It Works Timeline</a>
@@ -469,7 +472,7 @@
     </div>
   </header>
 
-  <!-- HERO SECTION (#1 Staggered Words, #2 Flowing Gradient, #3 Orbiting TH/MY/ID, #4 Glowing Globe, #5 Dotted Flight Arc) -->
+  <!-- HERO SECTION -->
   <section class="relative z-10 pt-10 pb-20 sm:pt-16 sm:pb-24 px-4 sm:px-6 lg:px-8">
     <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
       
@@ -494,7 +497,7 @@
         </h1>
 
         <p class="text-slate-300 text-base sm:text-lg max-w-2xl leading-relaxed">
-          Apply from anywhere in Pakistan without visiting an office. <strong>ESCAPE HOLIDAYS</strong> processes <strong>all visa types</strong> for <strong>Thailand, Malaysia, and Indonesia</strong> — for <strong>Families, Singles, Students, Job Holders &amp; Business Owners</strong>. Send your documents on WhatsApp anytime and get approved in <strong>maximum 2 weeks</strong> (or choose <strong>Urgent Visa</strong>).
+          Apply from anywhere in Pakistan without visiting an office. <strong>ESCAPE HOLIDAYS</strong> processes <strong>all visa types</strong> for <strong>Thailand, Malaysia, Indonesia &amp; Azerbaijan</strong> — for <strong>Families, Singles, Students, Job Holders &amp; Business Owners</strong>. Send your documents on WhatsApp anytime and get approved in <strong>maximum 2 weeks</strong> (or choose <strong>Urgent Visa</strong>).
         </p>
 
         <!-- Dual Primary CTA Buttons (#14 Sheen & Hover Lift) -->
@@ -521,43 +524,56 @@
         </div>
       </div>
 
-      <!-- Right Column: #3 Orbiting Rings (TH, MY, ID), #4 Central Floating Glowing Globe & Plane, #5 Dotted Flight Arc (5 cols) -->
+      <!-- Right Column: #3 Orbiting Rings (4 Countries with Aeroplanes), #4 Central Floating Glowing Globe & Plane, #5 Dotted Flight Arc -->
       <div class="lg:col-span-5 flex flex-col items-center justify-center">
-        <div class="relative w-[310px] h-[310px] sm:w-[390px] sm:h-[390px] flex items-center justify-center">
+        <div class="relative w-[340px] h-[340px] sm:w-[430px] sm:h-[430px] flex items-center justify-center">
           
-          <!-- Outer Dotted Orbit Ring #3 (ID - Indonesia) -->
-          <div class="orbit-ring-3 absolute inset-0 rounded-full border border-dashed border-violet-400/40">
-            <div class="orbit-badge-3 absolute -top-4 left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-midnight-900 border-2 border-violet-400 text-violet-300 font-display font-bold text-xs flex items-center justify-center shadow-lg shadow-violet-500/30">
-              ID
+          <!-- Outer Orbit Ring #4 (Azerbaijan + Aeroplane) -->
+          <div class="orbit-ring-4 absolute inset-0 rounded-full border border-dashed border-amber-400/40">
+            <div class="orbit-badge-4 absolute -top-4 left-1/2 -translate-x-1/2 px-3.5 py-1 rounded-full bg-midnight-900/95 border border-amber-400 text-amber-200 font-display font-bold text-[11px] sm:text-xs flex items-center gap-1.5 whitespace-nowrap shadow-lg shadow-amber-500/30 backdrop-blur-md">
+              <span>Azerbaijan</span>
+              <i class="fa-solid fa-plane text-amber-400 text-[10px]"></i>
             </div>
           </div>
 
-          <!-- Middle Dotted Orbit Ring #2 (MY - Malaysia) -->
-          <div class="orbit-ring-2 absolute inset-8 sm:inset-10 rounded-full border border-dashed border-cyan-400/45">
-            <div class="orbit-badge-2 absolute top-1/2 -right-5 -translate-y-1/2 w-10 h-10 rounded-full bg-midnight-900 border-2 border-cyan-400 text-cyan-300 font-display font-bold text-xs flex items-center justify-center shadow-lg shadow-cyan-500/30">
-              MY
+          <!-- Orbit Ring #3 (Indonesia + Aeroplane) -->
+          <div class="orbit-ring-3 absolute inset-10 rounded-full border border-dashed border-violet-400/40">
+            <div class="orbit-badge-3 absolute top-1/2 -right-8 -translate-y-1/2 px-3.5 py-1 rounded-full bg-midnight-900/95 border border-violet-400 text-violet-200 font-display font-bold text-[11px] sm:text-xs flex items-center gap-1.5 whitespace-nowrap shadow-lg shadow-violet-500/30 backdrop-blur-md">
+              <span>Indonesia</span>
+              <i class="fa-solid fa-plane text-violet-400 text-[10px]"></i>
             </div>
           </div>
 
-          <!-- Inner Dotted Orbit Ring #1 (TH - Thailand) -->
-          <div class="orbit-ring-1 absolute inset-16 sm:inset-20 rounded-full border border-dashed border-blue-400/50">
-            <div class="orbit-badge-1 absolute -bottom-4 left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-midnight-900 border-2 border-blue-400 text-blue-300 font-display font-bold text-xs flex items-center justify-center shadow-lg shadow-blue-500/30">
-              TH
+          <!-- Orbit Ring #2 (Malaysia + Aeroplane) -->
+          <div class="orbit-ring-2 absolute inset-20 rounded-full border border-dashed border-cyan-400/45">
+            <div class="orbit-badge-2 absolute -bottom-4 left-1/2 -translate-x-1/2 px-3.5 py-1 rounded-full bg-midnight-900/95 border border-cyan-400 text-cyan-200 font-display font-bold text-[11px] sm:text-xs flex items-center gap-1.5 whitespace-nowrap shadow-lg shadow-cyan-500/30 backdrop-blur-md">
+              <span>Malaysia</span>
+              <i class="fa-solid fa-plane text-cyan-400 text-[10px]"></i>
             </div>
           </div>
 
-          <!-- #4 Central Floating Glowing Globe with Subtle Banking Plane Inside -->
-          <div class="globe-float relative w-32 h-32 sm:w-40 sm:h-40 rounded-full bg-gradient-to-br from-blue-500/30 via-cyan-400/20 to-violet-600/30 border border-cyan-300/50 shadow-[0_0_55px_rgba(34,211,238,0.45)] flex items-center justify-center backdrop-blur-md">
-            <svg class="w-24 h-24 sm:w-28 sm:h-28" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <!-- Orbit Ring #1 (Thailand + Aeroplane) -->
+          <div class="orbit-ring-1 absolute inset-[110px] rounded-full border border-dashed border-blue-400/50">
+            <div class="orbit-badge-1 absolute top-1/2 -left-8 -translate-y-1/2 px-3.5 py-1 rounded-full bg-midnight-900/95 border border-blue-400 text-blue-200 font-display font-bold text-[11px] sm:text-xs flex items-center gap-1.5 whitespace-nowrap shadow-lg shadow-blue-500/30 backdrop-blur-md">
+              <span>Thailand</span>
+              <i class="fa-solid fa-plane text-blue-400 text-[10px]"></i>
+            </div>
+          </div>
+
+          <!-- #4 Central Floating Glowing Globe with Aeroplane Inside -->
+          <div class="globe-float relative w-28 h-28 sm:w-36 sm:h-36 rounded-full bg-gradient-to-br from-blue-500/30 via-cyan-400/20 to-violet-600/30 border border-cyan-300/50 shadow-[0_0_55px_rgba(34,211,238,0.45)] flex items-center justify-center backdrop-blur-md">
+            <svg class="w-20 h-20 sm:w-24 sm:h-24" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <circle cx="60" cy="60" r="46" stroke="url(#globeStroke)" stroke-width="2.5" />
               <ellipse cx="60" cy="60" rx="22" ry="46" stroke="#38BDF8" stroke-width="1.4" stroke-opacity="0.65" />
               <ellipse cx="60" cy="60" rx="38" ry="46" stroke="#818CF8" stroke-width="1.2" stroke-opacity="0.45" />
               <line x1="14" y1="60" x2="106" y2="60" stroke="#38BDF8" stroke-width="1.4" stroke-opacity="0.65" />
               <path d="M22 42C42 48 78 48 98 42" stroke="#22D3EE" stroke-width="1.2" stroke-opacity="0.55" />
               <path d="M22 78C42 72 78 72 98 78" stroke="#22D3EE" stroke-width="1.2" stroke-opacity="0.55" />
-              <!-- Plane subtly wobbling inside the globe -->
+              <!-- Aeroplane inside the globe -->
               <g class="inner-plane-wobble">
-                <path d="M84 39L42 54L52 62L40 74L45 78L57 66L65 76L84 39Z" fill="#F8FAFC" />
+                <g transform="translate(60, 60) rotate(-38) scale(2.1)">
+                  <path d="M12 0C12 -1.3 10.2 -2.2 8 -2.2H2.5L-3.5 -10.5H-6.2L-2.5 -2.2H-7.5L-10.2 -5.5H-12L-10.4 0L-12 5.5H-10.2L-7.5 2.2H-2.5L-6.2 10.5H-3.5L2.5 2.2H8C10.2 2.2 12 1.3 12 0Z" fill="#F8FAFC" />
+                </g>
               </g>
               <defs>
                 <linearGradient id="globeStroke" x1="14" y1="14" x2="106" y2="106" gradientUnits="userSpaceOnUse">
@@ -570,7 +586,7 @@
           </div>
         </div>
 
-        <!-- #5 Dotted Curved Flight Path Arc with Plane Continuously Flying Along Curve -->
+        <!-- #5 Dotted Curved Flight Path Arc with Aeroplane -->
         <div class="w-full max-w-sm mt-2">
           <svg class="w-full h-20 overflow-visible" viewBox="0 0 360 75" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <!-- Endpoints -->
@@ -578,14 +594,14 @@
             <text x="12" y="73" fill="#94A3B8" font-size="10" font-family="Plus Jakarta Sans" font-weight="700">PAKISTAN</text>
 
             <circle cx="336" cy="58" r="4.5" fill="#A78BFA" />
-            <text x="275" y="73" fill="#94A3B8" font-size="10" font-family="Plus Jakarta Sans" font-weight="700">TH · MY · ID</text>
+            <text x="260" y="73" fill="#94A3B8" font-size="10" font-family="Plus Jakarta Sans" font-weight="700">TH · MY · ID · AZ</text>
 
             <!-- Dotted Flight Arc -->
             <path id="flightArcPath" d="M 24 58 Q 180 -6 336 58" stroke="url(#arcGrad)" stroke-width="2.2" stroke-dasharray="5 6" fill="none" />
 
-            <!-- Flying Airplane following #flightArcPath -->
+            <!-- Flying Aeroplane -->
             <g>
-              <path d="M-9 -5 L11 0 L-9 5 L-5 0 Z" fill="#22D3EE" />
+              <path d="M12 0C12 -1.3 10.2 -2.2 8 -2.2H2.5L-3.5 -10.5H-6.2L-2.5 -2.2H-7.5L-10.2 -5.5H-12L-10.4 0L-12 5.5H-10.2L-7.5 2.2H-2.5L-6.2 10.5H-3.5L2.5 2.2H8C10.2 2.2 12 1.3 12 0Z" fill="#22D3EE" />
               <animateMotion dur="4.2s" repeatCount="indefinite" rotate="auto">
                 <mpath href="#flightArcPath" />
               </animateMotion>
@@ -605,11 +621,11 @@
     </div>
   </section>
 
-  <!-- #16 Infinite Seamless Marquee Banner ("THAILAND · MALAYSIA · INDONESIA") -->
+  <!-- #16 Infinite Seamless Marquee Banner -->
   <div class="relative z-20 bg-midnight-900/90 border-y border-white/10 py-3.5 overflow-hidden">
     <div class="marquee-track font-display font-bold text-sm sm:text-base tracking-[0.22em] text-cyan-300">
       <div class="flex items-center gap-8 pr-8">
-        <span>THAILAND · MALAYSIA · INDONESIA</span>
+        <span>THAILAND · MALAYSIA · INDONESIA · AZERBAIJAN</span>
         <span class="text-violet-400">✦</span>
         <span>ALL VISA TYPES</span>
         <span class="text-cyan-400">✦</span>
@@ -624,7 +640,7 @@
       </div>
       <!-- Duplicate track for seamless loop -->
       <div class="flex items-center gap-8 pr-8" aria-hidden="true">
-        <span>THAILAND · MALAYSIA · INDONESIA</span>
+        <span>THAILAND · MALAYSIA · INDONESIA · AZERBAIJAN</span>
         <span class="text-violet-400">✦</span>
         <span>ALL VISA TYPES</span>
         <span class="text-cyan-400">✦</span>
@@ -640,7 +656,7 @@
     </div>
   </div>
 
-  <!-- #11 Animated Counters Section (2, 24/7, 3, 9, 3, 5) -->
+  <!-- #11 Animated Counters Section -->
   <section class="scroll-reveal relative z-10 py-14 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
     <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-5">
       
@@ -660,9 +676,9 @@
 
       <div class="bg-midnight-900/80 border border-white/10 rounded-2xl p-5 text-center backdrop-blur-md">
         <p class="font-display text-3xl sm:text-4xl font-bold text-violet-400">
-          <span class="counter-num" data-target="3">0</span>
+          <span class="counter-num" data-target="4">0</span>
         </p>
-        <p class="text-xs text-slate-400 font-semibold mt-1">Top Asian Countries</p>
+        <p class="text-xs text-slate-400 font-semibold mt-1">Top Countries</p>
       </div>
 
       <div class="bg-midnight-900/80 border border-white/10 rounded-2xl p-5 text-center backdrop-blur-md">
@@ -689,7 +705,7 @@
     </div>
   </section>
 
-  <!-- DESTINATIONS SECTION (#13 3D Tilt Cards for Thailand, Malaysia, Indonesia) -->
+  <!-- DESTINATIONS SECTION (#13 3D Tilt Cards for Thailand, Malaysia, Indonesia, Azerbaijan) -->
   <section id="destinations" class="scroll-reveal relative z-10 py-16 sm:py-22 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
     <div class="text-center max-w-3xl mx-auto mb-14">
       <span class="text-xs font-extrabold uppercase tracking-[0.22em] text-cyan-400 block mb-2">
@@ -703,136 +719,180 @@
       </p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8" style="perspective: 1100px;">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" style="perspective: 1100px;">
       
-      <!-- Card 1: Thailand (#13 3D Tilt) -->
+      <!-- Card 1: Thailand -->
       <article class="tilt-card bg-midnight-900/90 border border-white/10 rounded-3xl overflow-hidden shadow-2xl flex flex-col justify-between group">
         <div>
-          <div class="relative h-56 overflow-hidden bg-midnight-800">
+          <div class="relative h-48 overflow-hidden bg-midnight-800">
             <img src="https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=900&q=80"
                  onerror="this.style.display='none'"
                  alt="Thailand Visa Consultancy"
                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
             <div class="absolute inset-0 bg-gradient-to-t from-midnight-950 via-midnight-950/30 to-transparent"></div>
-            <div class="absolute top-4 left-4 flex gap-2">
-              <span class="px-3 py-1 rounded-full bg-cyan-500/20 border border-cyan-400/40 text-cyan-300 text-xs font-bold backdrop-blur-md">All Visa Types</span>
-              <span class="px-3 py-1 rounded-full bg-rose-500/25 border border-rose-400/40 text-rose-200 text-xs font-bold backdrop-blur-md">Urgent Available</span>
+            <div class="absolute top-3 left-3 flex gap-1.5 flex-wrap">
+              <span class="px-2.5 py-0.5 rounded-full bg-cyan-500/20 border border-cyan-400/40 text-cyan-300 text-[10px] font-bold backdrop-blur-md">All Types</span>
+              <span class="px-2.5 py-0.5 rounded-full bg-rose-500/25 border border-rose-400/40 text-rose-200 text-[10px] font-bold backdrop-blur-md">Urgent</span>
             </div>
-            <div class="absolute bottom-4 left-6 right-6 flex items-end justify-between">
+            <div class="absolute bottom-3 left-5 right-5 flex items-end justify-between">
               <div>
-                <h3 class="font-display text-3xl font-bold text-white">Thailand</h3>
-                <p class="text-xs text-slate-300">Bangkok • Phuket • Pattaya • Krabi</p>
+                <h3 class="font-display text-2xl font-bold text-white">Thailand</h3>
+                <p class="text-[11px] text-slate-300">Bangkok • Phuket • Pattaya</p>
               </div>
-              <span class="text-2xl font-display font-bold text-cyan-400">TH</span>
+              <span class="text-xl font-display font-bold text-cyan-400">TH</span>
             </div>
           </div>
 
-          <div class="p-6 space-y-4">
-            <p class="text-sm text-slate-300 leading-relaxed">
-              Complete online visa filing for families, couples, solo travelers, and business visitors across all cities of Pakistan.
+          <div class="p-5 space-y-3">
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Complete online visa filing for families, couples, and solo travelers across Pakistan.
             </p>
-            <ul class="space-y-2 text-sm text-slate-300">
-              <li class="flex items-center gap-2"><i class="fa-solid fa-clock text-cyan-400"></i> Processing: <strong>Max 2 Weeks</strong></li>
-              <li class="flex items-center gap-2"><i class="fa-solid fa-hotel text-violet-400"></i> Hotels &amp; Flights: <strong>Available on Request</strong></li>
+            <ul class="space-y-1.5 text-xs text-slate-300">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-clock text-cyan-400"></i> Processing: <strong>Max 2 Wks</strong></li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-hotel text-violet-400"></i> Hotels &amp; Flights: <strong>On Request</strong></li>
               <li class="flex items-center gap-2"><i class="fa-solid fa-tag text-emerald-400"></i> Fee: <strong>Contact for Price</strong></li>
             </ul>
           </div>
         </div>
 
-        <div class="p-6 pt-0">
+        <div class="p-5 pt-0">
           <a href="https://wa.me/923148351871?text=Assalam-o-Alaikum%20ESCAPE%20HOLIDAYS!%20Please%20share%20the%20price%20and%20details%20for%20a%20THAILAND%20Visa."
              target="_blank" rel="noopener noreferrer"
-             class="btn-sheen w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-bold py-3.5 px-5 rounded-xl shadow-lg">
-            <i class="fa-brands fa-whatsapp text-lg"></i>
-            <span>Contact for Thailand Price</span>
+             class="btn-sheen w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-bold py-3 px-4 rounded-xl text-xs shadow-lg">
+            <i class="fa-brands fa-whatsapp text-base"></i>
+            <span>Inquire Thailand</span>
           </a>
         </div>
       </article>
 
-      <!-- Card 2: Malaysia (#13 3D Tilt) -->
+      <!-- Card 2: Malaysia -->
       <article class="tilt-card bg-midnight-900/90 border border-white/10 rounded-3xl overflow-hidden shadow-2xl flex flex-col justify-between group">
         <div>
-          <div class="relative h-56 overflow-hidden bg-midnight-800">
+          <div class="relative h-48 overflow-hidden bg-midnight-800">
             <img src="https://images.unsplash.com/photo-1596422846543-75c6fc197f07?auto=format&fit=crop&w=900&q=80"
                  onerror="this.style.display='none'"
                  alt="Malaysia Visa Consultancy"
                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
             <div class="absolute inset-0 bg-gradient-to-t from-midnight-950 via-midnight-950/30 to-transparent"></div>
-            <div class="absolute top-4 left-4 flex gap-2">
-              <span class="px-3 py-1 rounded-full bg-cyan-500/20 border border-cyan-400/40 text-cyan-300 text-xs font-bold backdrop-blur-md">All Visa Types</span>
-              <span class="px-3 py-1 rounded-full bg-rose-500/25 border border-rose-400/40 text-rose-200 text-xs font-bold backdrop-blur-md">Urgent Available</span>
+            <div class="absolute top-3 left-3 flex gap-1.5 flex-wrap">
+              <span class="px-2.5 py-0.5 rounded-full bg-cyan-500/20 border border-cyan-400/40 text-cyan-300 text-[10px] font-bold backdrop-blur-md">All Types</span>
+              <span class="px-2.5 py-0.5 rounded-full bg-rose-500/25 border border-rose-400/40 text-rose-200 text-[10px] font-bold backdrop-blur-md">Urgent</span>
             </div>
-            <div class="absolute bottom-4 left-6 right-6 flex items-end justify-between">
+            <div class="absolute bottom-3 left-5 right-5 flex items-end justify-between">
               <div>
-                <h3 class="font-display text-3xl font-bold text-white">Malaysia</h3>
-                <p class="text-xs text-slate-300">Kuala Lumpur • Langkawi • Genting</p>
+                <h3 class="font-display text-2xl font-bold text-white">Malaysia</h3>
+                <p class="text-[11px] text-slate-300">Kuala Lumpur • Langkawi</p>
               </div>
-              <span class="text-2xl font-display font-bold text-cyan-400">MY</span>
+              <span class="text-xl font-display font-bold text-cyan-400">MY</span>
             </div>
           </div>
 
-          <div class="p-6 space-y-4">
-            <p class="text-sm text-slate-300 leading-relaxed">
-              Hassle-free online Malaysia visa processing for holidays, family trips, students, and corporate travel.
+          <div class="p-5 space-y-3">
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Hassle-free online Malaysia visa processing for holidays, family trips, and students.
             </p>
-            <ul class="space-y-2 text-sm text-slate-300">
-              <li class="flex items-center gap-2"><i class="fa-solid fa-clock text-cyan-400"></i> Processing: <strong>Max 2 Weeks</strong></li>
-              <li class="flex items-center gap-2"><i class="fa-solid fa-hotel text-violet-400"></i> Hotels &amp; Flights: <strong>Available on Request</strong></li>
+            <ul class="space-y-1.5 text-xs text-slate-300">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-clock text-cyan-400"></i> Processing: <strong>Max 2 Wks</strong></li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-hotel text-violet-400"></i> Hotels &amp; Flights: <strong>On Request</strong></li>
               <li class="flex items-center gap-2"><i class="fa-solid fa-tag text-emerald-400"></i> Fee: <strong>Contact for Price</strong></li>
             </ul>
           </div>
         </div>
 
-        <div class="p-6 pt-0">
+        <div class="p-5 pt-0">
           <a href="https://wa.me/923148351871?text=Assalam-o-Alaikum%20ESCAPE%20HOLIDAYS!%20Please%20share%20the%20price%20and%20details%20for%20a%20MALAYSIA%20Visa."
              target="_blank" rel="noopener noreferrer"
-             class="btn-sheen w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-cyan-500 to-indigo-600 text-white font-bold py-3.5 px-5 rounded-xl shadow-lg">
-            <i class="fa-brands fa-whatsapp text-lg"></i>
-            <span>Contact for Malaysia Price</span>
+             class="btn-sheen w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-cyan-500 to-indigo-600 text-white font-bold py-3 px-4 rounded-xl text-xs shadow-lg">
+            <i class="fa-brands fa-whatsapp text-base"></i>
+            <span>Inquire Malaysia</span>
           </a>
         </div>
       </article>
 
-      <!-- Card 3: Indonesia (#13 3D Tilt) -->
+      <!-- Card 3: Indonesia -->
       <article class="tilt-card bg-midnight-900/90 border border-white/10 rounded-3xl overflow-hidden shadow-2xl flex flex-col justify-between group">
         <div>
-          <div class="relative h-56 overflow-hidden bg-midnight-800">
+          <div class="relative h-48 overflow-hidden bg-midnight-800">
             <img src="https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?auto=format&fit=crop&w=900&q=80"
                  onerror="this.style.display='none'"
                  alt="Indonesia Visa Consultancy"
                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
             <div class="absolute inset-0 bg-gradient-to-t from-midnight-950 via-midnight-950/30 to-transparent"></div>
-            <div class="absolute top-4 left-4 flex gap-2">
-              <span class="px-3 py-1 rounded-full bg-cyan-500/20 border border-cyan-400/40 text-cyan-300 text-xs font-bold backdrop-blur-md">All Visa Types</span>
-              <span class="px-3 py-1 rounded-full bg-rose-500/25 border border-rose-400/40 text-rose-200 text-xs font-bold backdrop-blur-md">Urgent Available</span>
+            <div class="absolute top-3 left-3 flex gap-1.5 flex-wrap">
+              <span class="px-2.5 py-0.5 rounded-full bg-cyan-500/20 border border-cyan-400/40 text-cyan-300 text-[10px] font-bold backdrop-blur-md">All Types</span>
+              <span class="px-2.5 py-0.5 rounded-full bg-rose-500/25 border border-rose-400/40 text-rose-200 text-[10px] font-bold backdrop-blur-md">Urgent</span>
             </div>
-            <div class="absolute bottom-4 left-6 right-6 flex items-end justify-between">
+            <div class="absolute bottom-3 left-5 right-5 flex items-end justify-between">
               <div>
-                <h3 class="font-display text-3xl font-bold text-white">Indonesia</h3>
-                <p class="text-xs text-slate-300">Bali • Jakarta • Ubud • Lombok</p>
+                <h3 class="font-display text-2xl font-bold text-white">Indonesia</h3>
+                <p class="text-[11px] text-slate-300">Bali • Jakarta • Ubud</p>
               </div>
-              <span class="text-2xl font-display font-bold text-violet-400">ID</span>
+              <span class="text-xl font-display font-bold text-violet-400">ID</span>
             </div>
           </div>
 
-          <div class="p-6 space-y-4">
-            <p class="text-sm text-slate-300 leading-relaxed">
-              Smooth Bali &amp; Jakarta visa filing via WhatsApp with optional resort stays and return airfare arrangements.
+          <div class="p-5 space-y-3">
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Smooth Bali &amp; Jakarta visa filing via WhatsApp with optional resort stays.
             </p>
-            <ul class="space-y-2 text-sm text-slate-300">
-              <li class="flex items-center gap-2"><i class="fa-solid fa-clock text-cyan-400"></i> Processing: <strong>Max 2 Weeks</strong></li>
-              <li class="flex items-center gap-2"><i class="fa-solid fa-hotel text-violet-400"></i> Hotels &amp; Flights: <strong>Available on Request</strong></li>
+            <ul class="space-y-1.5 text-xs text-slate-300">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-clock text-cyan-400"></i> Processing: <strong>Max 2 Wks</strong></li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-hotel text-violet-400"></i> Hotels &amp; Flights: <strong>On Request</strong></li>
               <li class="flex items-center gap-2"><i class="fa-solid fa-tag text-emerald-400"></i> Fee: <strong>Contact for Price</strong></li>
             </ul>
           </div>
         </div>
 
-        <div class="p-6 pt-0">
+        <div class="p-5 pt-0">
           <a href="https://wa.me/923148351871?text=Assalam-o-Alaikum%20ESCAPE%20HOLIDAYS!%20Please%20share%20the%20price%20and%20details%20for%20an%20INDONESIA%20Visa."
              target="_blank" rel="noopener noreferrer"
-             class="btn-sheen w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-violet-600 to-blue-600 text-white font-bold py-3.5 px-5 rounded-xl shadow-lg">
-            <i class="fa-brands fa-whatsapp text-lg"></i>
-            <span>Contact for Indonesia Price</span>
+             class="btn-sheen w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-violet-600 to-blue-600 text-white font-bold py-3 px-4 rounded-xl text-xs shadow-lg">
+            <i class="fa-brands fa-whatsapp text-base"></i>
+            <span>Inquire Indonesia</span>
+          </a>
+        </div>
+      </article>
+
+      <!-- Card 4: Azerbaijan -->
+      <article class="tilt-card bg-midnight-900/90 border border-white/10 rounded-3xl overflow-hidden shadow-2xl flex flex-col justify-between group">
+        <div>
+          <div class="relative h-48 overflow-hidden bg-midnight-800">
+            <img src="https://images.unsplash.com/photo-1596306499317-8490232098fa?auto=format&fit=crop&w=900&q=80"
+                 onerror="this.style.display='none'"
+                 alt="Azerbaijan Visa Consultancy"
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div class="absolute inset-0 bg-gradient-to-t from-midnight-950 via-midnight-950/30 to-transparent"></div>
+            <div class="absolute top-3 left-3 flex gap-1.5 flex-wrap">
+              <span class="px-2.5 py-0.5 rounded-full bg-cyan-500/20 border border-cyan-400/40 text-cyan-300 text-[10px] font-bold backdrop-blur-md">All Types</span>
+              <span class="px-2.5 py-0.5 rounded-full bg-rose-500/25 border border-rose-400/40 text-rose-200 text-[10px] font-bold backdrop-blur-md">Urgent</span>
+            </div>
+            <div class="absolute bottom-3 left-5 right-5 flex items-end justify-between">
+              <div>
+                <h3 class="font-display text-2xl font-bold text-white">Azerbaijan</h3>
+                <p class="text-[11px] text-amber-300">Baku • Gabala • Shahdag</p>
+              </div>
+              <span class="text-xl font-display font-bold text-amber-400">AZ</span>
+            </div>
+          </div>
+
+          <div class="p-5 space-y-3">
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Fast online Baku &amp; Azerbaijan e-visa processing for families, couples &amp; solo travelers.
+            </p>
+            <ul class="space-y-1.5 text-xs text-slate-300">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-clock text-cyan-400"></i> Processing: <strong>Max 2 Wks</strong></li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-hotel text-violet-400"></i> Hotels &amp; Flights: <strong>On Request</strong></li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-tag text-emerald-400"></i> Fee: <strong>Contact for Price</strong></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="p-5 pt-0">
+          <a href="https://wa.me/923148351871?text=Assalam-o-Alaikum%20ESCAPE%20HOLIDAYS!%20Please%20share%20the%20price%20and%20details%20for%20an%20AZERBAIJAN%20Visa."
+             target="_blank" rel="noopener noreferrer"
+             class="btn-sheen w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-amber-500 to-orange-500 text-midnight-950 font-extrabold py-3 px-4 rounded-xl text-xs shadow-lg">
+            <i class="fa-brands fa-whatsapp text-base"></i>
+            <span>Inquire Azerbaijan</span>
           </a>
         </div>
       </article>
@@ -840,7 +900,7 @@
     </div>
   </section>
 
-  <!-- #17 CORE RULES SECTION WITH GLOWING ROTATING BORDER CARDS (9 Months, 3 Months, 5 Lakh) -->
+  <!-- #17 CORE RULES SECTION -->
   <section id="rules" class="scroll-reveal relative z-10 py-16 sm:py-22 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
     <div class="text-center max-w-3xl mx-auto mb-14">
       <span class="text-xs font-extrabold uppercase tracking-[0.22em] text-cyan-400 block mb-2">
@@ -856,7 +916,7 @@
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-7">
       
-      <!-- #17 Glowing Rotating Border Card 1: 9 Months Passport -->
+      <!-- Card 1 -->
       <div class="glow-border-card shadow-xl shadow-cyan-500/10">
         <div class="glow-border-inner p-7 flex flex-col justify-between">
           <div>
@@ -870,12 +930,12 @@
             </p>
           </div>
           <div class="mt-6 pt-4 border-t border-white/10 text-xs font-semibold text-slate-400">
-            Required for Thailand, Malaysia &amp; Indonesia
+            Required for Thailand, Malaysia, Indonesia &amp; Azerbaijan
           </div>
         </div>
       </div>
 
-      <!-- #17 Glowing Rotating Border Card 2: 3 Months Bank Statement -->
+      <!-- Card 2 -->
       <div class="glow-border-card shadow-xl shadow-violet-500/10">
         <div class="glow-border-inner p-7 flex flex-col justify-between">
           <div>
@@ -894,7 +954,7 @@
         </div>
       </div>
 
-      <!-- #17 Glowing Rotating Border Card 3: 5 Lakh Closing Balance -->
+      <!-- Card 3 -->
       <div class="glow-border-card shadow-xl shadow-blue-500/10">
         <div class="glow-border-inner p-7 flex flex-col justify-between">
           <div>
@@ -916,7 +976,7 @@
     </div>
   </section>
 
-  <!-- #18 URGENT VISA BANNER WITH FLOWING CORAL GRADIENT -->
+  <!-- #18 URGENT VISA BANNER -->
   <section class="scroll-reveal relative z-10 py-6 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
     <div class="coral-flow-banner rounded-3xl p-7 sm:p-10 shadow-2xl shadow-rose-600/25 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
       <div class="space-y-2 max-w-2xl">
@@ -940,7 +1000,7 @@
     </div>
   </section>
 
-  <!-- #19 INTERACTIVE VISA FINDER (Staggered One-by-One Document List Reveal) -->
+  <!-- #19 INTERACTIVE VISA FINDER -->
   <section id="visa-finder" class="scroll-reveal relative z-10 py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
     <div class="text-center max-w-3xl mx-auto mb-12">
       <span class="text-xs font-extrabold uppercase tracking-[0.22em] text-cyan-400 block mb-2">
@@ -1007,7 +1067,7 @@
     </div>
   </section>
 
-  <!-- #12 ANIMATED "HOW IT WORKS" TIMELINE (Line fills & steps illuminate on scroll) -->
+  <!-- #12 ANIMATED "HOW IT WORKS" TIMELINE -->
   <section id="how-it-works" class="scroll-reveal relative z-10 py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
     <div class="text-center max-w-2xl mx-auto mb-16">
       <span class="text-xs font-extrabold uppercase tracking-[0.22em] text-cyan-400 block mb-2">
@@ -1034,7 +1094,7 @@
         </div>
         <h3 class="font-display text-xl font-bold text-white">Message Us Anytime on WhatsApp (24/7)</h3>
         <p class="text-sm text-slate-300 mt-1.5 leading-relaxed">
-          Contact <strong>0314-8351871</strong> or email <strong>escapeholidays@gmail.com</strong> anytime day or night. Tell us your destination (Thailand, Malaysia, or Indonesia) to get the latest price and guidance.
+          Contact <strong>0314-8351871</strong> or email <strong>escapeholidays@gmail.com</strong> anytime day or night. Tell us your destination (Thailand, Malaysia, Indonesia, or Azerbaijan) to get the latest price and guidance.
         </p>
       </div>
 
@@ -1076,7 +1136,7 @@
   <!-- PAYMENTS & REVIEWS SECTION -->
   <section id="payments" class="scroll-reveal relative z-10 py-16 sm:py-22 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-20">
     
-    <!-- Payment Methods Card (Easypaisa & Bank Transfer) -->
+    <!-- Payment Methods Card -->
     <div class="bg-midnight-900/90 border border-white/10 rounded-3xl p-7 sm:p-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
       <div class="lg:col-span-6 space-y-3">
         <span class="px-3 py-1 rounded-full bg-cyan-500/15 border border-cyan-400/30 text-cyan-300 text-xs font-extrabold uppercase tracking-wider">
@@ -1161,7 +1221,7 @@
               <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
             </div>
             <p class="text-sm text-slate-300 leading-relaxed">
-              "As a government employee in Islamabad, I sent my govt card and service letter on WhatsApp, paid via Easypaisa, and received my Indonesia visa well within 2 weeks."
+              "As a government employee in Islamabad, I sent my govt card and service letter on WhatsApp, paid via Easypaisa, and received my Azerbaijan visa well within 2 weeks."
             </p>
           </div>
           <div class="mt-5 pt-4 border-t border-white/10">
@@ -1173,7 +1233,7 @@
     </div>
   </section>
 
-  <!-- #21 FAQ SECTION WITH ROTATING '+' TO '×' ICONS -->
+  <!-- #21 FAQ SECTION -->
   <section id="faq" class="scroll-reveal relative z-10 py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
     <div class="text-center mb-12">
       <span class="text-xs font-extrabold uppercase tracking-[0.22em] text-cyan-400 block mb-2">
@@ -1192,7 +1252,7 @@
           <span class="faq-plus-icon w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-cyan-400 text-xl shrink-0">+</span>
         </button>
         <div class="faq-answer hidden px-6 pb-5 text-sm text-slate-300 leading-relaxed border-t border-white/5 pt-3">
-          Standard visa processing for Thailand, Malaysia, and Indonesia takes a <strong>maximum of 2 weeks</strong>. If you have urgent travel plans, <strong>Urgent Visa Processing</strong> is also available — message us on WhatsApp at <strong>0314-8351871</strong> anytime.
+          Standard visa processing for Thailand, Malaysia, Indonesia, and Azerbaijan takes a <strong>maximum of 2 weeks</strong>. If you have urgent travel plans, <strong>Urgent Visa Processing</strong> is also available — message us on WhatsApp at <strong>0314-8351871</strong> anytime.
         </div>
       </div>
 
@@ -1237,13 +1297,13 @@
           ESCAPE <span class="text-cyan-400">HOLIDAYS</span>
         </span>
         <p class="text-sm text-slate-400 leading-relaxed">
-          Pakistan’s 100% Online Travel &amp; Visa Consultancy for Thailand, Malaysia, and Indonesia. All visa types, urgent processing, hotels &amp; flight tickets.
+          Pakistan’s 100% Online Travel &amp; Visa Consultancy for Thailand, Malaysia, Indonesia, and Azerbaijan. All visa types, urgent processing, hotels &amp; flight tickets.
         </p>
       </div>
 
       <div class="space-y-2 text-sm text-slate-300">
         <h3 class="font-display font-bold text-white text-lg mb-3">Quick Links</h3>
-        <div><a href="#destinations" class="hover:text-cyan-400 transition">Thailand, Malaysia &amp; Indonesia</a></div>
+        <div><a href="#destinations" class="hover:text-cyan-400 transition">Thailand, Malaysia, Indonesia &amp; Azerbaijan</a></div>
         <div><a href="#rules" class="hover:text-cyan-400 transition">Core Visa Rules (9 Mos / 3 Mos / 5 Lakh)</a></div>
         <div><a href="#visa-finder" class="hover:text-cyan-400 transition">Interactive Visa Document Finder</a></div>
         <div><a href="#payments" class="hover:text-cyan-400 transition">Easypaisa &amp; Bank Payments</a></div>
@@ -1346,7 +1406,7 @@
     }, { passive: true });
 
     // =========================================================================
-    // #7 INTERACTIVE PARTICLE NETWORK CANVAS (Connects dots & connects to mouse/touch)
+    // #7 INTERACTIVE PARTICLE NETWORK CANVAS
     // =========================================================================
     (function initParticleNetwork() {
       const canvas = document.getElementById('particleCanvas');
@@ -1379,13 +1439,11 @@
           if (p.x < 0 || p.x > width) p.vx *= -1;
           if (p.y < 0 || p.y > height) p.vy *= -1;
 
-          // Draw dot
           ctx.beginPath();
           ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
           ctx.fillStyle = 'rgba(56, 189, 248, 0.55)';
           ctx.fill();
 
-          // Connect nearby dots
           for (let j = i + 1; j < particles.length; j++) {
             const p2 = particles[j];
             const dx = p.x - p2.x;
@@ -1401,7 +1459,6 @@
             }
           }
 
-          // Connect dot to mouse/touch pointer when close
           if (pointerPos.x !== null && pointerPos.y !== null) {
             const mdx = p.x - pointerPos.x;
             const mdy = p.y - pointerPos.y;
@@ -1422,7 +1479,7 @@
     })();
 
     // =========================================================================
-    // #9 TOP SCROLL PROGRESS BAR + #12 TIMELINE FILL & STEP ILLUMINATION
+    // #9 TOP SCROLL PROGRESS BAR + #12 TIMELINE FILL
     // =========================================================================
     const scrollProgressBar = document.getElementById('scrollProgressBar');
     const timelineContainer = document.getElementById('timelineContainer');
@@ -1430,13 +1487,11 @@
     const timelineSteps = document.querySelectorAll('.timeline-step');
 
     function handleScrollAnimations() {
-      // #9 Top progress bar
       const scrollTop = window.scrollY;
       const docHeight = document.documentElement.scrollHeight - window.innerHeight;
       const scrollPercent = docHeight > 0 ? Math.min(100, (scrollTop / docHeight) * 100) : 0;
       scrollProgressBar.style.width = `${scrollPercent}%`;
 
-      // #12 Timeline line fill & node illumination
       if (timelineContainer && timelineFillLine) {
         const rect = timelineContainer.getBoundingClientRect();
         const triggerPoint = window.innerHeight * 0.72;
@@ -1466,14 +1521,13 @@
     handleScrollAnimations();
 
     // =========================================================================
-    // #10 SCROLL REVEAL SECTIONS + #11 ANIMATED COUNTERS (2, 24/7, 3, 9, 3, 5)
+    // #10 SCROLL REVEAL SECTIONS + #11 ANIMATED COUNTERS
     // =========================================================================
     const revealObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add('revealed');
 
-          // Trigger any counters inside the revealed section
           entry.target.querySelectorAll('.counter-num').forEach((counter) => {
             if (counter.dataset.counted) return;
             counter.dataset.counted = 'true';
@@ -1497,7 +1551,7 @@
     document.querySelectorAll('.scroll-reveal').forEach((sec) => revealObserver.observe(sec));
 
     // =========================================================================
-    // #13 3D CARD TILT ON HOVER (Thailand / Malaysia / Indonesia)
+    // #13 3D CARD TILT ON HOVER
     // =========================================================================
     document.querySelectorAll('.tilt-card').forEach((card) => {
       card.addEventListener('mousemove', (e) => {
@@ -1517,7 +1571,7 @@
     });
 
     // =========================================================================
-    // #19 INTERACTIVE VISA FINDER WITH STAGGERED ONE-BY-ONE DOCUMENT LIST
+    // #19 INTERACTIVE VISA FINDER
     // =========================================================================
     const visaProfiles = {
       business: {
@@ -1569,7 +1623,6 @@
       const data = visaProfiles[key];
       if (!data) return;
 
-      // Update active tab buttons
       document.querySelectorAll('.vf-btn').forEach((btn) => {
         btn.classList.remove('bg-gradient-to-r', 'from-blue-600', 'to-cyan-500', 'text-white', 'font-bold', 'shadow-lg');
         btn.classList.add('bg-white/5', 'text-slate-300', 'font-semibold');
@@ -1598,18 +1651,16 @@
       });
     }
 
-    // Initialize default Visa Finder list
     renderVisaDocs('business');
 
     // =========================================================================
-    // #21 FAQ ACCORDION WITH ROTATING '+' TO '×' ICON
+    // #21 FAQ ACCORDION
     // =========================================================================
     function toggleFaq(buttonEl) {
       const item = buttonEl.closest('.faq-item');
       const answer = item.querySelector('.faq-answer');
       const isOpen = item.classList.contains('faq-open');
 
-      // Close other open FAQs smoothly
       document.querySelectorAll('.faq-item').forEach((other) => {
         other.classList.remove('faq-open');
         other.querySelector('.faq-answer').classList.add('hidden');

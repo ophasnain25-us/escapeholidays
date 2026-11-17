@@ -1,0 +1,1625 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ESCAPE HOLIDAYS | Online Visa & Travel Consultancy — Thailand, Malaysia & Indonesia</title>
+  <meta name="description" content="ESCAPE HOLIDAYS - 100% Online Pakistani Travel & Visa Consultancy for Thailand, Malaysia & Indonesia. All Visa Types, Max 2 Weeks Processing, Urgent Visas, Hotels & Flights. 24/7 WhatsApp: 0314-8351871." />
+
+  <!-- Google Fonts: Plus Jakarta Sans & Space Grotesk -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            display: ['Space Grotesk', 'sans-serif'],
+          },
+          colors: {
+            midnight: {
+              950: '#040711',
+              900: '#080E1E',
+              800: '#0F172A',
+              700: '#1E293B',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <style>
+    :root {
+      --mouse-x: 50vw;
+      --mouse-y: 35vh;
+    }
+
+    body {
+      background-color: #040711;
+      color: #F8FAFC;
+      overflow-x: hidden;
+    }
+
+    /* #9 Top Multi-Color Scroll Progress Bar */
+    #scrollProgressBar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      width: 0%;
+      z-index: 100;
+      background: linear-gradient(90deg, #3B82F6, #06B6D4, #8B5CF6, #10B981);
+      box-shadow: 0 0 12px rgba(6, 182, 212, 0.8);
+      transition: width 0.08s linear;
+    }
+
+    /* #8 Mouse & Touch Spotlight Glow (Desktop & Mobile) */
+    #pointerSpotlight {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 2;
+      background: radial-gradient(
+        480px circle at var(--mouse-x) var(--mouse-y),
+        rgba(56, 189, 248, 0.13),
+        rgba(99, 102, 241, 0.06) 42%,
+        transparent 75%
+      );
+      transition: opacity 0.35s ease;
+    }
+
+    /* Mobile Touch Ripple Burst */
+    .touch-burst {
+      position: fixed;
+      width: 180px;
+      height: 180px;
+      margin-left: -90px;
+      margin-top: -90px;
+      border-radius: 9999px;
+      pointer-events: none;
+      z-index: 3;
+      background: radial-gradient(circle, rgba(34, 211, 238, 0.35) 0%, rgba(59, 130, 246, 0.12) 50%, transparent 72%);
+      animation: touchRipple 0.75s ease-out forwards;
+    }
+    @keyframes touchRipple {
+      0% { transform: scale(0.35); opacity: 0.95; }
+      100% { transform: scale(1.85); opacity: 0; }
+    }
+
+    /* #7 Full-screen Particle Canvas */
+    #particleCanvas {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* #6 Floating Ambient Blurred Blobs */
+    @keyframes blobFloatA {
+      0%, 100% { transform: translate(0px, 0px) scale(1); }
+      33% { transform: translate(45px, -35px) scale(1.08); }
+      66% { transform: translate(-30px, 30px) scale(0.95); }
+    }
+    @keyframes blobFloatB {
+      0%, 100% { transform: translate(0px, 0px) scale(1); }
+      50% { transform: translate(-50px, -40px) scale(1.1); }
+    }
+    @keyframes blobFloatC {
+      0%, 100% { transform: translate(0px, 0px) scale(1); }
+      50% { transform: translate(40px, 35px) scale(1.06); }
+    }
+    .ambient-blob-1 { animation: blobFloatA 16s ease-in-out infinite; }
+    .ambient-blob-2 { animation: blobFloatB 20s ease-in-out infinite; }
+    .ambient-blob-3 { animation: blobFloatC 18s ease-in-out infinite; }
+
+    /* #1 Hero Headline Staggered Word Rise */
+    .word-mask {
+      display: inline-block;
+      overflow: hidden;
+      vertical-align: bottom;
+      padding-bottom: 0.08em;
+    }
+    .word-rise {
+      display: inline-block;
+      opacity: 0;
+      transform: translateY(105%);
+      animation: wordRiseUp 0.75s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    @keyframes wordRiseUp {
+      to {
+        opacity: 1;
+        transform: translateY(0%);
+      }
+    }
+
+    /* #2 Flowing Gradient Text ("Escape anywhere") */
+    .flowing-gradient-text {
+      background: linear-gradient(90deg, #3B82F6, #06B6D4, #8B5CF6, #38BDF8, #3B82F6);
+      background-size: 300% 300%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      animation: flowHue 5s ease infinite;
+    }
+    @keyframes flowHue {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* #3 Orbiting Dotted Rings with TH, MY, ID Badges */
+    @keyframes spinCW {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    @keyframes spinCCW {
+      from { transform: rotate(360deg); }
+      to { transform: rotate(0deg); }
+    }
+    .orbit-ring-1 { animation: spinCW 22s linear infinite; }
+    .orbit-badge-1 { animation: spinCCW 22s linear infinite; }
+
+    .orbit-ring-2 { animation: spinCCW 28s linear infinite; }
+    .orbit-badge-2 { animation: spinCW 28s linear infinite; }
+
+    .orbit-ring-3 { animation: spinCW 34s linear infinite; }
+    .orbit-badge-3 { animation: spinCCW 34s linear infinite; }
+
+    /* #4 Central Glowing Globe Bobbing + Plane Wobble */
+    @keyframes globeBob {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-11px); }
+    }
+    @keyframes innerPlaneWobble {
+      0%, 100% { transform: translate(0, 0) rotate(0deg); }
+      25% { transform: translate(3px, -3px) rotate(5deg); }
+      75% { transform: translate(-3px, 2px) rotate(-4deg); }
+    }
+    .globe-float { animation: globeBob 4.2s ease-in-out infinite; }
+    .inner-plane-wobble {
+      transform-origin: center;
+      animation: innerPlaneWobble 3.4s ease-in-out infinite;
+    }
+
+    /* #14 Button Light Sweep & Hover Lift */
+    .btn-sheen {
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.25s ease;
+    }
+    .btn-sheen:hover {
+      transform: translateY(-3px);
+    }
+    .btn-sheen::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -75%;
+      width: 50%;
+      height: 200%;
+      background: linear-gradient(
+        120deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.34) 50%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      transform: skewX(-22deg);
+      animation: sheenSweep 3.8s infinite;
+      pointer-events: none;
+    }
+    @keyframes sheenSweep {
+      0% { left: -75%; }
+      45%, 100% { left: 135%; }
+    }
+
+    /* #15 Menu Underline Left-to-Right Fill */
+    .nav-underline {
+      position: relative;
+      padding-bottom: 4px;
+    }
+    .nav-underline::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0%;
+      height: 2px;
+      border-radius: 9999px;
+      background: linear-gradient(90deg, #38BDF8, #818CF8);
+      transition: width 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .nav-underline:hover::after {
+      width: 100%;
+    }
+
+    /* #16 Infinite Seamless Marquee Banner */
+    @keyframes marqueeScroll {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-50%); }
+    }
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      animation: marqueeScroll 24s linear infinite;
+    }
+    .marquee-track:hover {
+      animation-play-state: paused;
+    }
+
+    /* #17 Glowing Rotating Conic Border on Core Rule Cards */
+    @property --border-angle {
+      syntax: '<angle>';
+      initial-value: 0deg;
+      inherits: false;
+    }
+    @keyframes rotateBorderAngle {
+      to { --border-angle: 360deg; }
+    }
+    .glow-border-card {
+      position: relative;
+      border-radius: 1.5rem;
+      padding: 1.5px;
+      background: conic-gradient(
+        from var(--border-angle),
+        rgba(56, 189, 248, 0.15) 0%,
+        #06B6D4 25%,
+        #8B5CF6 50%,
+        #3B82F6 75%,
+        rgba(56, 189, 248, 0.15) 100%
+      );
+      animation: rotateBorderAngle 4.5s linear infinite;
+    }
+    .glow-border-inner {
+      background: #080E1E;
+      border-radius: calc(1.5rem - 1.5px);
+      height: 100%;
+    }
+
+    /* #18 Urgent Banner Flowing Coral Gradient */
+    .coral-flow-banner {
+      background: linear-gradient(120deg, #F43F5E, #FB7185, #F97316, #E11D48, #F43F5E);
+      background-size: 300% 300%;
+      animation: flowHue 6s ease infinite;
+    }
+
+    /* #10 Scroll Reveal Section Entrance */
+    .scroll-reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .scroll-reveal.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* #13 3D Card Tilt Container */
+    .tilt-card {
+      transform-style: preserve-3d;
+      transition: transform 0.18s ease-out, box-shadow 0.25s ease;
+      will-change: transform;
+    }
+
+    /* #19 Visa Finder Staggered List Items */
+    @keyframes docItemIn {
+      from {
+        opacity: 0;
+        transform: translateX(-16px) translateY(8px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0) translateY(0);
+      }
+    }
+    .doc-stagger-item {
+      opacity: 0;
+      animation: docItemIn 0.42s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    /* #20 WhatsApp Expanding Pulse Ring */
+    @keyframes waRadar {
+      0% { transform: scale(1); opacity: 0.75; }
+      100% { transform: scale(1.75); opacity: 0; }
+    }
+    .wa-radar-ring {
+      position: absolute;
+      inset: 0;
+      border-radius: 9999px;
+      background: rgba(16, 185, 129, 0.65);
+      animation: waRadar 2s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+      z-index: -1;
+    }
+
+    /* #21 FAQ Rotating + to x Icon */
+    .faq-plus-icon {
+      transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .faq-open .faq-plus-icon {
+      transform: rotate(45deg);
+    }
+
+    /* #22 Live "Online Now" Beating Green Dot */
+    @keyframes liveDotBeat {
+      0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+      50% { transform: scale(1.22); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+    }
+    .live-green-dot {
+      animation: liveDotBeat 1.5s ease-in-out infinite;
+    }
+  </style>
+</head>
+<body class="font-sans antialiased selection:bg-cyan-500 selection:text-midnight-950">
+
+  <!-- #9 Top Scroll Progress Bar -->
+  <div id="scrollProgressBar" aria-hidden="true"></div>
+
+  <!-- #7 Interactive Background Particle Network -->
+  <canvas id="particleCanvas" aria-hidden="true"></canvas>
+
+  <!-- #8 Mouse & Mobile Touch Spotlight Glow -->
+  <div id="pointerSpotlight" aria-hidden="true"></div>
+
+  <!-- #6 Floating Ambient Blurred Gradient Blobs -->
+  <div class="fixed inset-0 overflow-hidden pointer-events-none z-0" aria-hidden="true">
+    <div class="ambient-blob-1 absolute -top-28 -left-24 w-[440px] h-[440px] rounded-full bg-blue-600/15 blur-[110px]"></div>
+    <div class="ambient-blob-2 absolute top-1/3 -right-28 w-[480px] h-[480px] rounded-full bg-cyan-500/12 blur-[120px]"></div>
+    <div class="ambient-blob-3 absolute -bottom-32 left-1/4 w-[460px] h-[460px] rounded-full bg-violet-600/15 blur-[120px]"></div>
+  </div>
+
+  <!-- Top Utility Bar with #22 Live "Online Now" Pulsing Green Dot -->
+  <div class="relative z-30 bg-midnight-900/90 backdrop-blur-md border-b border-white/10 text-xs py-2.5 px-4">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
+      <div class="flex items-center gap-3">
+        <span class="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-emerald-500/15 border border-emerald-400/30 text-emerald-300 font-bold">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 live-green-dot"></span>
+          Online now — 24/7 Instant Reply
+        </span>
+        <span class="hidden md:inline text-slate-400">100% Online Service Across Pakistan • Families, Singles, Students &amp; Professionals</span>
+      </div>
+
+      <div class="flex items-center gap-4 ml-auto sm:ml-0 font-semibold text-slate-200">
+        <a href="https://wa.me/923148351871" target="_blank" rel="noopener noreferrer" class="hover:text-cyan-400 transition flex items-center gap-1.5">
+          <i class="fa-brands fa-whatsapp text-emerald-400"></i> 0314-8351871
+        </a>
+        <a href="mailto:escapeholidays@gmail.com" class="hidden sm:flex hover:text-cyan-400 transition items-center gap-1.5">
+          <i class="fa-solid fa-envelope text-cyan-400"></i> escapeholidays@gmail.com
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sticky Navigation Header with #15 Menu Underline Fill -->
+  <header class="sticky top-0 z-40 bg-midnight-950/80 backdrop-blur-xl border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Custom SVG Logo for ESCAPE HOLIDAYS -->
+      <a href="#" class="flex items-center gap-3 group focus:outline-none">
+        <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-blue-500 via-cyan-400 to-violet-600 p-[1.5px] shadow-lg shadow-cyan-500/20 group-hover:scale-105 transition-transform">
+          <div class="w-full h-full rounded-[14px] bg-midnight-950 flex items-center justify-center">
+            <svg class="w-7 h-7" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="32" cy="32" r="24" stroke="url(#logoGrad)" stroke-width="2.5" />
+              <ellipse cx="32" cy="32" rx="11" ry="24" stroke="#38BDF8" stroke-width="1.5" stroke-dasharray="3 3" />
+              <path d="M12 38C22 28 36 22 52 18" stroke="#F8FAFC" stroke-width="2.2" stroke-linecap="round" />
+              <path d="M54 16L41 21L44.5 24.5L38 30.5L40 32.5L46.5 26.5L50 30L54 16Z" fill="#22D3EE" />
+              <defs>
+                <linearGradient id="logoGrad" x1="8" y1="8" x2="56" y2="56" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#3B82F6" />
+                  <stop offset="0.5" stop-color="#06B6D4" />
+                  <stop offset="1" stop-color="#8B5CF6" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+        </div>
+        <div class="flex flex-col">
+          <span class="font-display font-bold text-xl sm:text-2xl tracking-tight text-white leading-none">
+            ESCAPE <span class="text-cyan-400">HOLIDAYS</span>
+          </span>
+          <span class="text-[10px] uppercase tracking-[0.24em] text-slate-400 font-semibold mt-1">
+            Online Visa &amp; Travel
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Menu (#15 Menu Underline Fill) -->
+      <nav class="hidden lg:flex items-center gap-8 text-sm font-semibold text-slate-300">
+        <a href="#destinations" class="nav-underline hover:text-white transition">Destinations</a>
+        <a href="#rules" class="nav-underline hover:text-white transition">Key Rules</a>
+        <a href="#visa-finder" class="nav-underline hover:text-white transition">Visa Finder</a>
+        <a href="#how-it-works" class="nav-underline hover:text-white transition">How It Works</a>
+        <a href="#payments" class="nav-underline hover:text-white transition">Payments</a>
+        <a href="#faq" class="nav-underline hover:text-white transition">FAQ</a>
+      </nav>
+
+      <!-- Header Right CTA (#14 Button Light Sweep & Hover Lift) -->
+      <div class="flex items-center gap-3">
+        <a href="https://wa.me/923148351871?text=Assalam-o-Alaikum%20ESCAPE%20HOLIDAYS!%20I%20want%20to%20apply%20for%20a%20visa."
+           target="_blank" rel="noopener noreferrer"
+           class="btn-sheen inline-flex items-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-500 text-midnight-950 font-extrabold text-sm px-4 sm:px-5 py-2.5 rounded-xl shadow-lg shadow-emerald-500/25">
+          <i class="fa-brands fa-whatsapp text-lg"></i>
+          <span class="hidden sm:inline">WhatsApp Docs</span>
+        </a>
+
+        <button id="mobileMenuBtn" type="button" aria-label="Toggle Mobile Menu"
+                class="lg:hidden p-2.5 rounded-xl bg-white/5 border border-white/10 text-slate-200 hover:bg-white/10">
+          <i class="fa-solid fa-bars text-lg"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobileMenuDrawer" class="hidden lg:hidden bg-midnight-900/95 backdrop-blur-xl border-t border-white/10 px-4 pt-3 pb-6 space-y-2">
+      <a href="#destinations" class="mob-link block px-4 py-3 rounded-xl text-slate-200 hover:bg-white/5 font-semibold">Destinations (TH • MY • ID)</a>
+      <a href="#rules" class="mob-link block px-4 py-3 rounded-xl text-slate-200 hover:bg-white/5 font-semibold">Mandatory Visa Rules</a>
+      <a href="#visa-finder" class="mob-link block px-4 py-3 rounded-xl text-slate-200 hover:bg-white/5 font-semibold">Interactive Visa Finder</a>
+      <a href="#how-it-works" class="mob-link block px-4 py-3 rounded-xl text-slate-200 hover:bg-white/5 font-semibold">How It Works Timeline</a>
+      <a href="#payments" class="mob-link block px-4 py-3 rounded-xl text-slate-200 hover:bg-white/5 font-semibold">Easypaisa &amp; Bank Transfer</a>
+      <a href="#faq" class="mob-link block px-4 py-3 rounded-xl text-slate-200 hover:bg-white/5 font-semibold">FAQ &amp; Contact</a>
+    </div>
+  </header>
+
+  <!-- HERO SECTION (#1 Staggered Words, #2 Flowing Gradient, #3 Orbiting TH/MY/ID, #4 Glowing Globe, #5 Dotted Flight Arc) -->
+  <section class="relative z-10 pt-10 pb-20 sm:pt-16 sm:pb-24 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      
+      <!-- Left Column: Staggered Headline & Actions (7 cols) -->
+      <div class="lg:col-span-7 space-y-7">
+        <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/5 border border-cyan-400/30 text-cyan-300 text-xs sm:text-sm font-semibold backdrop-blur-md">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 live-green-dot"></span>
+          <span>100% Online Across Pakistan • Standard (Max 2 Weeks) &amp; Urgent Visas</span>
+        </div>
+
+        <!-- #1 Staggered Word Rise + #2 Flowing Gradient Text -->
+        <h1 class="font-display text-4xl sm:text-6xl lg:text-[66px] font-bold tracking-tight leading-[1.08] text-white">
+          <span class="word-mask"><span class="word-rise" style="animation-delay: 0.08s;">Visa</span></span>
+          <span class="word-mask"><span class="word-rise" style="animation-delay: 0.22s;">approved.</span></span>
+          <br class="hidden sm:block" />
+          <span class="word-mask">
+            <span class="word-rise flowing-gradient-text" style="animation-delay: 0.38s;">Escape</span>
+          </span>
+          <span class="word-mask">
+            <span class="word-rise flowing-gradient-text" style="animation-delay: 0.54s;">anywhere.</span>
+          </span>
+        </h1>
+
+        <p class="text-slate-300 text-base sm:text-lg max-w-2xl leading-relaxed">
+          Apply from anywhere in Pakistan without visiting an office. <strong>ESCAPE HOLIDAYS</strong> processes <strong>all visa types</strong> for <strong>Thailand, Malaysia, and Indonesia</strong> — for <strong>Families, Singles, Students, Job Holders &amp; Business Owners</strong>. Send your documents on WhatsApp anytime and get approved in <strong>maximum 2 weeks</strong> (or choose <strong>Urgent Visa</strong>).
+        </p>
+
+        <!-- Dual Primary CTA Buttons (#14 Sheen & Hover Lift) -->
+        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-1">
+          <a href="https://wa.me/923148351871?text=Assalam-o-Alaikum%20ESCAPE%20HOLIDAYS!%20I%20would%20like%20to%20start%20my%20visa%20application.%20Please%20share%20current%20prices."
+             target="_blank" rel="noopener noreferrer"
+             class="btn-sheen inline-flex items-center justify-center gap-3 bg-gradient-to-r from-blue-600 via-cyan-500 to-indigo-600 text-white font-bold text-base px-7 py-4 rounded-2xl shadow-xl shadow-cyan-500/25">
+            <i class="fa-brands fa-whatsapp text-2xl text-emerald-300"></i>
+            <span>Send Docs on WhatsApp (0314-8351871)</span>
+          </a>
+
+          <a href="mailto:escapeholidays@gmail.com?subject=Visa%20Inquiry%20-%20ESCAPE%20HOLIDAYS"
+             class="btn-sheen inline-flex items-center justify-center gap-2.5 bg-white/5 hover:bg-white/10 text-white border border-white/15 font-bold text-base px-6 py-4 rounded-2xl backdrop-blur-md">
+            <i class="fa-solid fa-envelope text-cyan-400"></i>
+            <span>escapeholidays@gmail.com</span>
+          </a>
+        </div>
+
+        <!-- Quick Trust Pills -->
+        <div class="flex flex-wrap items-center gap-4 text-xs sm:text-sm text-slate-400 pt-2">
+          <span class="flex items-center gap-1.5"><i class="fa-solid fa-circle-check text-cyan-400"></i> Message Anytime (24/7 Reply)</span>
+          <span class="flex items-center gap-1.5"><i class="fa-solid fa-circle-check text-cyan-400"></i> Hotels &amp; Flights on Request</span>
+          <span class="flex items-center gap-1.5"><i class="fa-solid fa-circle-check text-cyan-400"></i> Easypaisa &amp; Bank Accepted</span>
+        </div>
+      </div>
+
+      <!-- Right Column: #3 Orbiting Rings (TH, MY, ID), #4 Central Floating Glowing Globe & Plane, #5 Dotted Flight Arc (5 cols) -->
+      <div class="lg:col-span-5 flex flex-col items-center justify-center">
+        <div class="relative w-[310px] h-[310px] sm:w-[390px] sm:h-[390px] flex items-center justify-center">
+          
+          <!-- Outer Dotted Orbit Ring #3 (ID - Indonesia) -->
+          <div class="orbit-ring-3 absolute inset-0 rounded-full border border-dashed border-violet-400/40">
+            <div class="orbit-badge-3 absolute -top-4 left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-midnight-900 border-2 border-violet-400 text-violet-300 font-display font-bold text-xs flex items-center justify-center shadow-lg shadow-violet-500/30">
+              ID
+            </div>
+          </div>
+
+          <!-- Middle Dotted Orbit Ring #2 (MY - Malaysia) -->
+          <div class="orbit-ring-2 absolute inset-8 sm:inset-10 rounded-full border border-dashed border-cyan-400/45">
+            <div class="orbit-badge-2 absolute top-1/2 -right-5 -translate-y-1/2 w-10 h-10 rounded-full bg-midnight-900 border-2 border-cyan-400 text-cyan-300 font-display font-bold text-xs flex items-center justify-center shadow-lg shadow-cyan-500/30">
+              MY
+            </div>
+          </div>
+
+          <!-- Inner Dotted Orbit Ring #1 (TH - Thailand) -->
+          <div class="orbit-ring-1 absolute inset-16 sm:inset-20 rounded-full border border-dashed border-blue-400/50">
+            <div class="orbit-badge-1 absolute -bottom-4 left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-midnight-900 border-2 border-blue-400 text-blue-300 font-display font-bold text-xs flex items-center justify-center shadow-lg shadow-blue-500/30">
+              TH
+            </div>
+          </div>
+
+          <!-- #4 Central Floating Glowing Globe with Subtle Banking Plane Inside -->
+          <div class="globe-float relative w-32 h-32 sm:w-40 sm:h-40 rounded-full bg-gradient-to-br from-blue-500/30 via-cyan-400/20 to-violet-600/30 border border-cyan-300/50 shadow-[0_0_55px_rgba(34,211,238,0.45)] flex items-center justify-center backdrop-blur-md">
+            <svg class="w-24 h-24 sm:w-28 sm:h-28" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="60" cy="60" r="46" stroke="url(#globeStroke)" stroke-width="2.5" />
+              <ellipse cx="60" cy="60" rx="22" ry="46" stroke="#38BDF8" stroke-width="1.4" stroke-opacity="0.65" />
+              <ellipse cx="60" cy="60" rx="38" ry="46" stroke="#818CF8" stroke-width="1.2" stroke-opacity="0.45" />
+              <line x1="14" y1="60" x2="106" y2="60" stroke="#38BDF8" stroke-width="1.4" stroke-opacity="0.65" />
+              <path d="M22 42C42 48 78 48 98 42" stroke="#22D3EE" stroke-width="1.2" stroke-opacity="0.55" />
+              <path d="M22 78C42 72 78 72 98 78" stroke="#22D3EE" stroke-width="1.2" stroke-opacity="0.55" />
+              <!-- Plane subtly wobbling inside the globe -->
+              <g class="inner-plane-wobble">
+                <path d="M84 39L42 54L52 62L40 74L45 78L57 66L65 76L84 39Z" fill="#F8FAFC" />
+              </g>
+              <defs>
+                <linearGradient id="globeStroke" x1="14" y1="14" x2="106" y2="106" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#38BDF8" />
+                  <stop offset="0.5" stop-color="#22D3EE" />
+                  <stop offset="1" stop-color="#A78BFA" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+        </div>
+
+        <!-- #5 Dotted Curved Flight Path Arc with Plane Continuously Flying Along Curve -->
+        <div class="w-full max-w-sm mt-2">
+          <svg class="w-full h-20 overflow-visible" viewBox="0 0 360 75" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <!-- Endpoints -->
+            <circle cx="24" cy="58" r="4.5" fill="#38BDF8" />
+            <text x="12" y="73" fill="#94A3B8" font-size="10" font-family="Plus Jakarta Sans" font-weight="700">PAKISTAN</text>
+
+            <circle cx="336" cy="58" r="4.5" fill="#A78BFA" />
+            <text x="275" y="73" fill="#94A3B8" font-size="10" font-family="Plus Jakarta Sans" font-weight="700">TH · MY · ID</text>
+
+            <!-- Dotted Flight Arc -->
+            <path id="flightArcPath" d="M 24 58 Q 180 -6 336 58" stroke="url(#arcGrad)" stroke-width="2.2" stroke-dasharray="5 6" fill="none" />
+
+            <!-- Flying Airplane following #flightArcPath -->
+            <g>
+              <path d="M-9 -5 L11 0 L-9 5 L-5 0 Z" fill="#22D3EE" />
+              <animateMotion dur="4.2s" repeatCount="indefinite" rotate="auto">
+                <mpath href="#flightArcPath" />
+              </animateMotion>
+            </g>
+
+            <defs>
+              <linearGradient id="arcGrad" x1="24" y1="58" x2="336" y2="58" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#38BDF8" />
+                <stop offset="0.5" stop-color="#22D3EE" />
+                <stop offset="1" stop-color="#A78BFA" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- #16 Infinite Seamless Marquee Banner ("THAILAND · MALAYSIA · INDONESIA") -->
+  <div class="relative z-20 bg-midnight-900/90 border-y border-white/10 py-3.5 overflow-hidden">
+    <div class="marquee-track font-display font-bold text-sm sm:text-base tracking-[0.22em] text-cyan-300">
+      <div class="flex items-center gap-8 pr-8">
+        <span>THAILAND · MALAYSIA · INDONESIA</span>
+        <span class="text-violet-400">✦</span>
+        <span>ALL VISA TYPES</span>
+        <span class="text-cyan-400">✦</span>
+        <span>MAX 2 WEEKS PROCESSING</span>
+        <span class="text-emerald-400">✦</span>
+        <span>URGENT VISA AVAILABLE</span>
+        <span class="text-blue-400">✦</span>
+        <span>HOTELS &amp; TICKETS ON REQUEST</span>
+        <span class="text-violet-400">✦</span>
+        <span>24/7 WHATSAPP: 0314-8351871</span>
+        <span class="text-cyan-400">✦</span>
+      </div>
+      <!-- Duplicate track for seamless loop -->
+      <div class="flex items-center gap-8 pr-8" aria-hidden="true">
+        <span>THAILAND · MALAYSIA · INDONESIA</span>
+        <span class="text-violet-400">✦</span>
+        <span>ALL VISA TYPES</span>
+        <span class="text-cyan-400">✦</span>
+        <span>MAX 2 WEEKS PROCESSING</span>
+        <span class="text-emerald-400">✦</span>
+        <span>URGENT VISA AVAILABLE</span>
+        <span class="text-blue-400">✦</span>
+        <span>HOTELS &amp; TICKETS ON REQUEST</span>
+        <span class="text-violet-400">✦</span>
+        <span>24/7 WHATSAPP: 0314-8351871</span>
+        <span class="text-cyan-400">✦</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- #11 Animated Counters Section (2, 24/7, 3, 9, 3, 5) -->
+  <section class="scroll-reveal relative z-10 py-14 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-5">
+      
+      <div class="bg-midnight-900/80 border border-white/10 rounded-2xl p-5 text-center backdrop-blur-md">
+        <p class="font-display text-3xl sm:text-4xl font-bold text-cyan-400">
+          <span class="counter-num" data-target="2">0</span> <span class="text-lg">Wks</span>
+        </p>
+        <p class="text-xs text-slate-400 font-semibold mt-1">Max Processing Time</p>
+      </div>
+
+      <div class="bg-midnight-900/80 border border-white/10 rounded-2xl p-5 text-center backdrop-blur-md">
+        <p class="font-display text-3xl sm:text-4xl font-bold text-emerald-400">
+          <span class="counter-num" data-target="24">0</span>/7
+        </p>
+        <p class="text-xs text-slate-400 font-semibold mt-1">Anytime Instant Reply</p>
+      </div>
+
+      <div class="bg-midnight-900/80 border border-white/10 rounded-2xl p-5 text-center backdrop-blur-md">
+        <p class="font-display text-3xl sm:text-4xl font-bold text-violet-400">
+          <span class="counter-num" data-target="3">0</span>
+        </p>
+        <p class="text-xs text-slate-400 font-semibold mt-1">Top Asian Countries</p>
+      </div>
+
+      <div class="bg-midnight-900/80 border border-white/10 rounded-2xl p-5 text-center backdrop-blur-md">
+        <p class="font-display text-3xl sm:text-4xl font-bold text-blue-400">
+          <span class="counter-num" data-target="9">0</span> <span class="text-lg">Mos</span>
+        </p>
+        <p class="text-xs text-slate-400 font-semibold mt-1">Min Passport Validity</p>
+      </div>
+
+      <div class="bg-midnight-900/80 border border-white/10 rounded-2xl p-5 text-center backdrop-blur-md">
+        <p class="font-display text-3xl sm:text-4xl font-bold text-cyan-300">
+          <span class="counter-num" data-target="3">0</span> <span class="text-lg">Mos</span>
+        </p>
+        <p class="text-xs text-slate-400 font-semibold mt-1">Bank Statement Period</p>
+      </div>
+
+      <div class="bg-midnight-900/80 border border-white/10 rounded-2xl p-5 text-center backdrop-blur-md">
+        <p class="font-display text-3xl sm:text-4xl font-bold text-amber-400">
+          <span class="counter-num" data-target="5">0</span> <span class="text-lg">Lakh</span>
+        </p>
+        <p class="text-xs text-slate-400 font-semibold mt-1">Min Closing Balance</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- DESTINATIONS SECTION (#13 3D Tilt Cards for Thailand, Malaysia, Indonesia) -->
+  <section id="destinations" class="scroll-reveal relative z-10 py-16 sm:py-22 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <div class="text-center max-w-3xl mx-auto mb-14">
+      <span class="text-xs font-extrabold uppercase tracking-[0.22em] text-cyan-400 block mb-2">
+        All Visa Types Available
+      </span>
+      <h2 class="font-display text-3xl sm:text-5xl font-bold text-white">
+        Choose Your Destination
+      </h2>
+      <p class="text-slate-400 mt-3 text-base">
+        Tourist, Family, Business, or Student visas — <strong>maximum 2 weeks</strong> standard processing, <strong>urgent visas available</strong>, plus <strong>hotels &amp; flight tickets</strong> on request.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8" style="perspective: 1100px;">
+      
+      <!-- Card 1: Thailand (#13 3D Tilt) -->
+      <article class="tilt-card bg-midnight-900/90 border border-white/10 rounded-3xl overflow-hidden shadow-2xl flex flex-col justify-between group">
+        <div>
+          <div class="relative h-56 overflow-hidden bg-midnight-800">
+            <img src="https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=900&q=80"
+                 onerror="this.style.display='none'"
+                 alt="Thailand Visa Consultancy"
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div class="absolute inset-0 bg-gradient-to-t from-midnight-950 via-midnight-950/30 to-transparent"></div>
+            <div class="absolute top-4 left-4 flex gap-2">
+              <span class="px-3 py-1 rounded-full bg-cyan-500/20 border border-cyan-400/40 text-cyan-300 text-xs font-bold backdrop-blur-md">All Visa Types</span>
+              <span class="px-3 py-1 rounded-full bg-rose-500/25 border border-rose-400/40 text-rose-200 text-xs font-bold backdrop-blur-md">Urgent Available</span>
+            </div>
+            <div class="absolute bottom-4 left-6 right-6 flex items-end justify-between">
+              <div>
+                <h3 class="font-display text-3xl font-bold text-white">Thailand</h3>
+                <p class="text-xs text-slate-300">Bangkok • Phuket • Pattaya • Krabi</p>
+              </div>
+              <span class="text-2xl font-display font-bold text-cyan-400">TH</span>
+            </div>
+          </div>
+
+          <div class="p-6 space-y-4">
+            <p class="text-sm text-slate-300 leading-relaxed">
+              Complete online visa filing for families, couples, solo travelers, and business visitors across all cities of Pakistan.
+            </p>
+            <ul class="space-y-2 text-sm text-slate-300">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-clock text-cyan-400"></i> Processing: <strong>Max 2 Weeks</strong></li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-hotel text-violet-400"></i> Hotels &amp; Flights: <strong>Available on Request</strong></li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-tag text-emerald-400"></i> Fee: <strong>Contact for Price</strong></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="p-6 pt-0">
+          <a href="https://wa.me/923148351871?text=Assalam-o-Alaikum%20ESCAPE%20HOLIDAYS!%20Please%20share%20the%20price%20and%20details%20for%20a%20THAILAND%20Visa."
+             target="_blank" rel="noopener noreferrer"
+             class="btn-sheen w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-bold py-3.5 px-5 rounded-xl shadow-lg">
+            <i class="fa-brands fa-whatsapp text-lg"></i>
+            <span>Contact for Thailand Price</span>
+          </a>
+        </div>
+      </article>
+
+      <!-- Card 2: Malaysia (#13 3D Tilt) -->
+      <article class="tilt-card bg-midnight-900/90 border border-white/10 rounded-3xl overflow-hidden shadow-2xl flex flex-col justify-between group">
+        <div>
+          <div class="relative h-56 overflow-hidden bg-midnight-800">
+            <img src="https://images.unsplash.com/photo-1596422846543-75c6fc197f07?auto=format&fit=crop&w=900&q=80"
+                 onerror="this.style.display='none'"
+                 alt="Malaysia Visa Consultancy"
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div class="absolute inset-0 bg-gradient-to-t from-midnight-950 via-midnight-950/30 to-transparent"></div>
+            <div class="absolute top-4 left-4 flex gap-2">
+              <span class="px-3 py-1 rounded-full bg-cyan-500/20 border border-cyan-400/40 text-cyan-300 text-xs font-bold backdrop-blur-md">All Visa Types</span>
+              <span class="px-3 py-1 rounded-full bg-rose-500/25 border border-rose-400/40 text-rose-200 text-xs font-bold backdrop-blur-md">Urgent Available</span>
+            </div>
+            <div class="absolute bottom-4 left-6 right-6 flex items-end justify-between">
+              <div>
+                <h3 class="font-display text-3xl font-bold text-white">Malaysia</h3>
+                <p class="text-xs text-slate-300">Kuala Lumpur • Langkawi • Genting</p>
+              </div>
+              <span class="text-2xl font-display font-bold text-cyan-400">MY</span>
+            </div>
+          </div>
+
+          <div class="p-6 space-y-4">
+            <p class="text-sm text-slate-300 leading-relaxed">
+              Hassle-free online Malaysia visa processing for holidays, family trips, students, and corporate travel.
+            </p>
+            <ul class="space-y-2 text-sm text-slate-300">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-clock text-cyan-400"></i> Processing: <strong>Max 2 Weeks</strong></li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-hotel text-violet-400"></i> Hotels &amp; Flights: <strong>Available on Request</strong></li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-tag text-emerald-400"></i> Fee: <strong>Contact for Price</strong></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="p-6 pt-0">
+          <a href="https://wa.me/923148351871?text=Assalam-o-Alaikum%20ESCAPE%20HOLIDAYS!%20Please%20share%20the%20price%20and%20details%20for%20a%20MALAYSIA%20Visa."
+             target="_blank" rel="noopener noreferrer"
+             class="btn-sheen w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-cyan-500 to-indigo-600 text-white font-bold py-3.5 px-5 rounded-xl shadow-lg">
+            <i class="fa-brands fa-whatsapp text-lg"></i>
+            <span>Contact for Malaysia Price</span>
+          </a>
+        </div>
+      </article>
+
+      <!-- Card 3: Indonesia (#13 3D Tilt) -->
+      <article class="tilt-card bg-midnight-900/90 border border-white/10 rounded-3xl overflow-hidden shadow-2xl flex flex-col justify-between group">
+        <div>
+          <div class="relative h-56 overflow-hidden bg-midnight-800">
+            <img src="https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?auto=format&fit=crop&w=900&q=80"
+                 onerror="this.style.display='none'"
+                 alt="Indonesia Visa Consultancy"
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div class="absolute inset-0 bg-gradient-to-t from-midnight-950 via-midnight-950/30 to-transparent"></div>
+            <div class="absolute top-4 left-4 flex gap-2">
+              <span class="px-3 py-1 rounded-full bg-cyan-500/20 border border-cyan-400/40 text-cyan-300 text-xs font-bold backdrop-blur-md">All Visa Types</span>
+              <span class="px-3 py-1 rounded-full bg-rose-500/25 border border-rose-400/40 text-rose-200 text-xs font-bold backdrop-blur-md">Urgent Available</span>
+            </div>
+            <div class="absolute bottom-4 left-6 right-6 flex items-end justify-between">
+              <div>
+                <h3 class="font-display text-3xl font-bold text-white">Indonesia</h3>
+                <p class="text-xs text-slate-300">Bali • Jakarta • Ubud • Lombok</p>
+              </div>
+              <span class="text-2xl font-display font-bold text-violet-400">ID</span>
+            </div>
+          </div>
+
+          <div class="p-6 space-y-4">
+            <p class="text-sm text-slate-300 leading-relaxed">
+              Smooth Bali &amp; Jakarta visa filing via WhatsApp with optional resort stays and return airfare arrangements.
+            </p>
+            <ul class="space-y-2 text-sm text-slate-300">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-clock text-cyan-400"></i> Processing: <strong>Max 2 Weeks</strong></li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-hotel text-violet-400"></i> Hotels &amp; Flights: <strong>Available on Request</strong></li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-tag text-emerald-400"></i> Fee: <strong>Contact for Price</strong></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="p-6 pt-0">
+          <a href="https://wa.me/923148351871?text=Assalam-o-Alaikum%20ESCAPE%20HOLIDAYS!%20Please%20share%20the%20price%20and%20details%20for%20an%20INDONESIA%20Visa."
+             target="_blank" rel="noopener noreferrer"
+             class="btn-sheen w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-violet-600 to-blue-600 text-white font-bold py-3.5 px-5 rounded-xl shadow-lg">
+            <i class="fa-brands fa-whatsapp text-lg"></i>
+            <span>Contact for Indonesia Price</span>
+          </a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- #17 CORE RULES SECTION WITH GLOWING ROTATING BORDER CARDS (9 Months, 3 Months, 5 Lakh) -->
+  <section id="rules" class="scroll-reveal relative z-10 py-16 sm:py-22 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <div class="text-center max-w-3xl mx-auto mb-14">
+      <span class="text-xs font-extrabold uppercase tracking-[0.22em] text-cyan-400 block mb-2">
+        Mandatory Baseline Criteria
+      </span>
+      <h2 class="font-display text-3xl sm:text-5xl font-bold text-white">
+        Core Document Rules for Every Applicant
+      </h2>
+      <p class="text-slate-400 mt-3 text-base">
+        Along with fresh photographs taken within the <strong>last 6 months</strong>, ensure your passport and bank statement meet these three essential rules:
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-7">
+      
+      <!-- #17 Glowing Rotating Border Card 1: 9 Months Passport -->
+      <div class="glow-border-card shadow-xl shadow-cyan-500/10">
+        <div class="glow-border-inner p-7 flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-blue-500/15 border border-blue-400/30 text-blue-400 flex items-center justify-center text-xl mb-5">
+              <i class="fa-solid fa-passport"></i>
+            </div>
+            <span class="text-xs font-bold uppercase tracking-widest text-cyan-400">Rule 01 • Passport</span>
+            <h3 class="font-display text-2xl font-bold text-white mt-1 mb-3">9 Months Validity Before Expiry</h3>
+            <p class="text-sm text-slate-300 leading-relaxed">
+              Your Pakistani passport must remain valid for <strong>at least 9 months prior to its expiry date</strong> at the time of submission, plus recent <strong>6-month photographs</strong>.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-white/10 text-xs font-semibold text-slate-400">
+            Required for Thailand, Malaysia &amp; Indonesia
+          </div>
+        </div>
+      </div>
+
+      <!-- #17 Glowing Rotating Border Card 2: 3 Months Bank Statement -->
+      <div class="glow-border-card shadow-xl shadow-violet-500/10">
+        <div class="glow-border-inner p-7 flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-cyan-500/15 border border-cyan-400/30 text-cyan-400 flex items-center justify-center text-xl mb-5">
+              <i class="fa-solid fa-file-invoice-dollar"></i>
+            </div>
+            <span class="text-xs font-bold uppercase tracking-widest text-cyan-400">Rule 02 • Bank Record</span>
+            <h3 class="font-display text-2xl font-bold text-white mt-1 mb-3">Last 3 Months Bank Statement</h3>
+            <p class="text-sm text-slate-300 leading-relaxed">
+              Provide an officially signed &amp; stamped bank statement covering the <strong>last 3 consecutive months</strong> (personal or sponsor account for students/families).
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-white/10 text-xs font-semibold text-slate-400">
+            PDF or clear scan accepted on WhatsApp
+          </div>
+        </div>
+      </div>
+
+      <!-- #17 Glowing Rotating Border Card 3: 5 Lakh Closing Balance -->
+      <div class="glow-border-card shadow-xl shadow-blue-500/10">
+        <div class="glow-border-inner p-7 flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-violet-500/15 border border-violet-400/30 text-violet-400 flex items-center justify-center text-xl mb-5">
+              <i class="fa-solid fa-vault"></i>
+            </div>
+            <span class="text-xs font-bold uppercase tracking-widest text-cyan-400">Rule 03 • Financial Proof</span>
+            <h3 class="font-display text-2xl font-bold text-white mt-1 mb-3">PKR 5 Lakh+ Closing Balance</h3>
+            <p class="text-sm text-slate-300 leading-relaxed">
+              Your 3-month bank statement must show a minimum closing balance of at least <strong>PKR 500,000 (5 Lakh)</strong> to qualify smoothly for embassy review.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-white/10 text-xs font-semibold text-slate-400">
+            Covers single, family, job &amp; business applicants
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- #18 URGENT VISA BANNER WITH FLOWING CORAL GRADIENT -->
+  <section class="scroll-reveal relative z-10 py-6 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <div class="coral-flow-banner rounded-3xl p-7 sm:p-10 shadow-2xl shadow-rose-600/25 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+      <div class="space-y-2 max-w-2xl">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/25 text-white text-xs font-extrabold uppercase tracking-wider">
+          <i class="fa-solid fa-bolt"></i> Priority Fast-Track Service
+        </div>
+        <h3 class="font-display text-2xl sm:text-4xl font-bold text-white">
+          Need Your Visa Faster? Urgent Processing Available!
+        </h3>
+        <p class="text-white/95 text-sm sm:text-base">
+          While our standard visa processing takes a maximum of <strong>2 weeks</strong>, we also offer <strong>Urgent Visa Processing</strong> alongside optional <strong>hotel reservations &amp; flight tickets</strong>.
+        </p>
+      </div>
+
+      <a href="https://wa.me/923148351871?text=Assalam-o-Alaikum%20ESCAPE%20HOLIDAYS!%20I%20need%20an%20URGENT%20Visa.%20Please%20share%20processing%20time%20and%20price."
+         target="_blank" rel="noopener noreferrer"
+         class="btn-sheen shrink-0 inline-flex items-center gap-3 bg-midnight-950 hover:bg-midnight-900 text-white font-bold px-7 py-4 rounded-2xl shadow-xl">
+        <i class="fa-brands fa-whatsapp text-emerald-400 text-xl"></i>
+        <span>Inquire Urgent Visa</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- #19 INTERACTIVE VISA FINDER (Staggered One-by-One Document List Reveal) -->
+  <section id="visa-finder" class="scroll-reveal relative z-10 py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+    <div class="text-center max-w-3xl mx-auto mb-12">
+      <span class="text-xs font-extrabold uppercase tracking-[0.22em] text-cyan-400 block mb-2">
+        Smart Document Checklist
+      </span>
+      <h2 class="font-display text-3xl sm:text-5xl font-bold text-white">
+        Interactive Visa Document Finder
+      </h2>
+      <p class="text-slate-400 mt-3 text-base">
+        Select your applicant profile below to view the exact documents you need to send on WhatsApp (<strong>0314-8351871</strong>).
+      </p>
+    </div>
+
+    <div class="bg-midnight-900/90 border border-white/10 rounded-3xl p-6 sm:p-10 shadow-2xl backdrop-blur-xl">
+      <!-- Category Selector Pills -->
+      <div class="flex flex-wrap justify-center gap-3 pb-8 border-b border-white/10" role="tablist">
+        <button type="button" onclick="renderVisaDocs('business')" id="vf-btn-business"
+                class="vf-btn px-5 py-3 rounded-xl text-xs sm:text-sm font-bold bg-gradient-to-r from-blue-600 to-cyan-500 text-white shadow-lg transition">
+          <i class="fa-solid fa-briefcase mr-1.5"></i> Business Owner
+        </button>
+        <button type="button" onclick="renderVisaDocs('job')" id="vf-btn-job"
+                class="vf-btn px-5 py-3 rounded-xl text-xs sm:text-sm font-semibold bg-white/5 text-slate-300 hover:bg-white/10 transition">
+          <i class="fa-solid fa-user-tie mr-1.5"></i> Private Job Holder
+        </button>
+        <button type="button" onclick="renderVisaDocs('govt')" id="vf-btn-govt"
+                class="vf-btn px-5 py-3 rounded-xl text-xs sm:text-sm font-semibold bg-white/5 text-slate-300 hover:bg-white/10 transition">
+          <i class="fa-solid fa-landmark mr-1.5"></i> Government Employee
+        </button>
+        <button type="button" onclick="renderVisaDocs('family')" id="vf-btn-family"
+                class="vf-btn px-5 py-3 rounded-xl text-xs sm:text-sm font-semibold bg-white/5 text-slate-300 hover:bg-white/10 transition">
+          <i class="fa-solid fa-people-roof mr-1.5"></i> Family / Single / Student
+        </button>
+      </div>
+
+      <!-- Dynamic Staggered Document Container -->
+      <div class="pt-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <div class="lg:col-span-8">
+          <h3 id="vfCategoryHeading" class="font-display text-2xl font-bold text-cyan-300 mb-5">
+            Required Documents for Business Owners
+          </h3>
+          <ul id="vfDocList" class="space-y-3.5">
+            <!-- Populated dynamically with staggered animation -->
+          </ul>
+        </div>
+
+        <div class="lg:col-span-4 bg-midnight-950/90 border border-cyan-400/25 rounded-2xl p-6 space-y-4">
+          <div class="inline-flex items-center gap-2 text-emerald-400 text-xs font-bold">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 live-green-dot"></span>
+            24/7 WhatsApp Verification
+          </div>
+          <h4 class="font-display text-xl font-bold text-white">Send Documents Now</h4>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Share photos or PDFs of these documents directly on WhatsApp. Available across all of Pakistan. Contact us for exact visa pricing.
+          </p>
+          <a id="vfWhatsAppLink"
+             href="https://wa.me/923148351871?text=Assalam-o-Alaikum%20ESCAPE%20HOLIDAYS!%20I%20am%20a%20Business%20Owner%20and%20want%20to%20send%20my%20visa%20documents."
+             target="_blank" rel="noopener noreferrer"
+             class="btn-sheen w-full inline-flex items-center justify-center gap-2 bg-emerald-500 hover:bg-emerald-400 text-midnight-950 font-extrabold text-sm py-3.5 px-4 rounded-xl">
+            <i class="fa-brands fa-whatsapp text-lg"></i>
+            <span>Submit on WhatsApp</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- #12 ANIMATED "HOW IT WORKS" TIMELINE (Line fills & steps illuminate on scroll) -->
+  <section id="how-it-works" class="scroll-reveal relative z-10 py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+    <div class="text-center max-w-2xl mx-auto mb-16">
+      <span class="text-xs font-extrabold uppercase tracking-[0.22em] text-cyan-400 block mb-2">
+        100% Online Process
+      </span>
+      <h2 class="font-display text-3xl sm:text-5xl font-bold text-white">
+        How It Works
+      </h2>
+      <p class="text-slate-400 mt-3 text-base">
+        Four effortless steps from anywhere in Pakistan to your approved visa.
+      </p>
+    </div>
+
+    <div id="timelineContainer" class="relative pl-10 sm:pl-14 space-y-12">
+      <!-- Background Track Line -->
+      <div class="absolute left-4 sm:left-6 top-2 bottom-2 w-1 bg-white/10 rounded-full"></div>
+      <!-- Animated Filling Progress Line -->
+      <div id="timelineFillLine" class="absolute left-4 sm:left-6 top-2 w-1 bg-gradient-to-b from-blue-500 via-cyan-400 to-violet-500 rounded-full shadow-[0_0_14px_rgba(34,211,238,0.85)]" style="height: 0%;"></div>
+
+      <!-- Step 1 -->
+      <div class="timeline-step relative bg-midnight-900/85 border border-white/10 rounded-2xl p-6 transition-all duration-500">
+        <div class="timeline-node absolute -left-[34px] sm:-left-[42px] top-6 w-6 h-6 rounded-full bg-midnight-950 border-2 border-slate-600 flex items-center justify-center text-[11px] font-bold text-slate-400 transition-all duration-500">
+          1
+        </div>
+        <h3 class="font-display text-xl font-bold text-white">Message Us Anytime on WhatsApp (24/7)</h3>
+        <p class="text-sm text-slate-300 mt-1.5 leading-relaxed">
+          Contact <strong>0314-8351871</strong> or email <strong>escapeholidays@gmail.com</strong> anytime day or night. Tell us your destination (Thailand, Malaysia, or Indonesia) to get the latest price and guidance.
+        </p>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="timeline-step relative bg-midnight-900/85 border border-white/10 rounded-2xl p-6 transition-all duration-500">
+        <div class="timeline-node absolute -left-[34px] sm:-left-[42px] top-6 w-6 h-6 rounded-full bg-midnight-950 border-2 border-slate-600 flex items-center justify-center text-[11px] font-bold text-slate-400 transition-all duration-500">
+          2
+        </div>
+        <h3 class="font-display text-xl font-bold text-white">Share Documents Directly on WhatsApp</h3>
+        <p class="text-sm text-slate-300 mt-1.5 leading-relaxed">
+          Send your 6-month recent photos, passport (valid 9+ months before expiry), 3-month bank statement (PKR 5 Lakh+ closing balance), and your Business NTN/Letterhead, Job Letter, or Govt Card/Letter.
+        </p>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="timeline-step relative bg-midnight-900/85 border border-white/10 rounded-2xl p-6 transition-all duration-500">
+        <div class="timeline-node absolute -left-[34px] sm:-left-[42px] top-6 w-6 h-6 rounded-full bg-midnight-950 border-2 border-slate-600 flex items-center justify-center text-[11px] font-bold text-slate-400 transition-all duration-500">
+          3
+        </div>
+        <h3 class="font-display text-xl font-bold text-white">Pay Online via Easypaisa or Bank Transfer</h3>
+        <p class="text-sm text-slate-300 mt-1.5 leading-relaxed">
+          Once our team verifies your file, complete your payment effortlessly from home using <strong>Easypaisa</strong> or any <strong>Pakistani Online Bank Transfer</strong>.
+        </p>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="timeline-step relative bg-midnight-900/85 border border-white/10 rounded-2xl p-6 transition-all duration-500">
+        <div class="timeline-node absolute -left-[34px] sm:-left-[42px] top-6 w-6 h-6 rounded-full bg-midnight-950 border-2 border-slate-600 flex items-center justify-center text-[11px] font-bold text-slate-400 transition-all duration-500">
+          4
+        </div>
+        <h3 class="font-display text-xl font-bold text-white">Receive Visa in Max 2 Weeks (+ Optional Hotels &amp; Flights)</h3>
+        <p class="text-sm text-slate-300 mt-1.5 leading-relaxed">
+          Get your approved visa within <strong>maximum 2 weeks</strong> (or faster via <strong>Urgent Visa</strong>). If requested, we also book your hotels and return flight tickets!
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAYMENTS & REVIEWS SECTION -->
+  <section id="payments" class="scroll-reveal relative z-10 py-16 sm:py-22 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-20">
+    
+    <!-- Payment Methods Card (Easypaisa & Bank Transfer) -->
+    <div class="bg-midnight-900/90 border border-white/10 rounded-3xl p-7 sm:p-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+      <div class="lg:col-span-6 space-y-3">
+        <span class="px-3 py-1 rounded-full bg-cyan-500/15 border border-cyan-400/30 text-cyan-300 text-xs font-extrabold uppercase tracking-wider">
+          Easy &amp; Secure Online Payments
+        </span>
+        <h2 class="font-display text-3xl font-bold text-white">
+          Pay via Easypaisa or Online Bank Transfer
+        </h2>
+        <p class="text-sm text-slate-300 leading-relaxed">
+          Serving clients across every city of Pakistan. Contact us on WhatsApp (<strong>0314-8351871</strong>) to confirm the latest visa/package fee and receive official payment details.
+        </p>
+      </div>
+
+      <div class="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="p-5 rounded-2xl bg-emerald-500/10 border border-emerald-400/30 flex items-center gap-4">
+          <div class="w-12 h-12 rounded-xl bg-emerald-500 text-midnight-950 font-display font-extrabold text-xl flex items-center justify-center shrink-0">
+            ep
+          </div>
+          <div>
+            <h3 class="font-bold text-white text-base">Easypaisa</h3>
+            <p class="text-xs text-slate-300 mt-0.5">Instant mobile account transfer</p>
+          </div>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-blue-500/10 border border-blue-400/30 flex items-center gap-4">
+          <div class="w-12 h-12 rounded-xl bg-blue-500 text-white text-xl flex items-center justify-center shrink-0">
+            <i class="fa-solid fa-building-columns"></i>
+          </div>
+          <div>
+            <h3 class="font-bold text-white text-base">Bank Transfer (IBFT)</h3>
+            <p class="text-xs text-slate-300 mt-0.5">All Pakistani Banks supported</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Client Testimonials -->
+    <div>
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="text-xs font-extrabold uppercase tracking-[0.22em] text-cyan-400 block mb-2">
+          Verified Traveler Feedback
+        </span>
+        <h2 class="font-display text-3xl sm:text-4xl font-bold text-white">
+          Reviews from Clients Across Pakistan
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-midnight-900/85 border border-white/10 rounded-3xl p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex text-amber-400 text-xs gap-1 mb-3">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-sm text-slate-300 leading-relaxed">
+              "Processed 4 Malaysia family visas from Lahore 100% online. I messaged on WhatsApp at midnight and still got an instant reply! Visas arrived in 9 days with hotel bookings."
+            </p>
+          </div>
+          <div class="mt-5 pt-4 border-t border-white/10">
+            <p class="font-bold text-white text-sm">Bilal Mahmood</p>
+            <p class="text-xs text-cyan-400">Business Owner • Lahore</p>
+          </div>
+        </div>
+
+        <div class="bg-midnight-900/85 border border-white/10 rounded-3xl p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex text-amber-400 text-xs gap-1 mb-3">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-sm text-slate-300 leading-relaxed">
+              "Needed an urgent Thailand visa from Karachi. Shared my passport, 3-month bank statement, and job letter on WhatsApp — got my visa and return ticket quickly."
+            </p>
+          </div>
+          <div class="mt-5 pt-4 border-t border-white/10">
+            <p class="font-bold text-white text-sm">Sana Farooq</p>
+            <p class="text-xs text-cyan-400">Private Sector Employee • Karachi</p>
+          </div>
+        </div>
+
+        <div class="bg-midnight-900/85 border border-white/10 rounded-3xl p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex text-amber-400 text-xs gap-1 mb-3">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-sm text-slate-300 leading-relaxed">
+              "As a government employee in Islamabad, I sent my govt card and service letter on WhatsApp, paid via Easypaisa, and received my Indonesia visa well within 2 weeks."
+            </p>
+          </div>
+          <div class="mt-5 pt-4 border-t border-white/10">
+            <p class="font-bold text-white text-sm">Tariq Mehmood</p>
+            <p class="text-xs text-cyan-400">Government Officer • Islamabad</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- #21 FAQ SECTION WITH ROTATING '+' TO '×' ICONS -->
+  <section id="faq" class="scroll-reveal relative z-10 py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+    <div class="text-center mb-12">
+      <span class="text-xs font-extrabold uppercase tracking-[0.22em] text-cyan-400 block mb-2">
+        Common Questions
+      </span>
+      <h2 class="font-display text-3xl sm:text-5xl font-bold text-white">
+        Frequently Asked Questions
+      </h2>
+    </div>
+
+    <div class="space-y-4">
+      
+      <div class="faq-item bg-midnight-900/85 border border-white/10 rounded-2xl overflow-hidden">
+        <button type="button" onclick="toggleFaq(this)" class="w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-bold text-white text-base">
+          <span>What is the maximum visa processing time, and are urgent visas available?</span>
+          <span class="faq-plus-icon w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-cyan-400 text-xl shrink-0">+</span>
+        </button>
+        <div class="faq-answer hidden px-6 pb-5 text-sm text-slate-300 leading-relaxed border-t border-white/5 pt-3">
+          Standard visa processing for Thailand, Malaysia, and Indonesia takes a <strong>maximum of 2 weeks</strong>. If you have urgent travel plans, <strong>Urgent Visa Processing</strong> is also available — message us on WhatsApp at <strong>0314-8351871</strong> anytime.
+        </div>
+      </div>
+
+      <div class="faq-item bg-midnight-900/85 border border-white/10 rounded-2xl overflow-hidden">
+        <button type="button" onclick="toggleFaq(this)" class="w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-bold text-white text-base">
+          <span>Can anyone across Pakistan apply (Families, Singles, Students, Job &amp; Business)?</span>
+          <span class="faq-plus-icon w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-cyan-400 text-xl shrink-0">+</span>
+        </button>
+        <div class="faq-answer hidden px-6 pb-5 text-sm text-slate-300 leading-relaxed border-t border-white/5 pt-3">
+          Yes! ESCAPE HOLIDAYS is 100% online and serves clients across all cities in Pakistan — including <strong>families, single travelers, students, private job holders, government employees, and business owners</strong>.
+        </div>
+      </div>
+
+      <div class="faq-item bg-midnight-900/85 border border-white/10 rounded-2xl overflow-hidden">
+        <button type="button" onclick="toggleFaq(this)" class="w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-bold text-white text-base">
+          <span>Do you also arrange hotel bookings and flight tickets?</span>
+          <span class="faq-plus-icon w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-cyan-400 text-xl shrink-0">+</span>
+        </button>
+        <div class="faq-answer hidden px-6 pb-5 text-sm text-slate-300 leading-relaxed border-t border-white/5 pt-3">
+          Yes, if a client requests them, we arrange confirmed <strong>hotel bookings and return flight tickets</strong> alongside your visa application. Contact us on WhatsApp or Email for customized package pricing.
+        </div>
+      </div>
+
+      <div class="faq-item bg-midnight-900/85 border border-white/10 rounded-2xl overflow-hidden">
+        <button type="button" onclick="toggleFaq(this)" class="w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-bold text-white text-base">
+          <span>How do I submit documents and make payment?</span>
+          <span class="faq-plus-icon w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-cyan-400 text-xl shrink-0">+</span>
+        </button>
+        <div class="faq-answer hidden px-6 pb-5 text-sm text-slate-300 leading-relaxed border-t border-white/5 pt-3">
+          Simply send clear scans/photos of your documents on WhatsApp (<strong>0314-8351871</strong>) or email (<strong>escapeholidays@gmail.com</strong>). You can message anytime 24/7 for an instant reply, and pay securely via <strong>Easypaisa</strong> or <strong>Online Bank Transfer</strong>.
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="relative z-10 bg-midnight-950/95 border-t border-white/10 pt-14 pb-10 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 pb-10 border-b border-white/10">
+      <div class="space-y-3">
+        <span class="font-display font-bold text-2xl text-white">
+          ESCAPE <span class="text-cyan-400">HOLIDAYS</span>
+        </span>
+        <p class="text-sm text-slate-400 leading-relaxed">
+          Pakistan’s 100% Online Travel &amp; Visa Consultancy for Thailand, Malaysia, and Indonesia. All visa types, urgent processing, hotels &amp; flight tickets.
+        </p>
+      </div>
+
+      <div class="space-y-2 text-sm text-slate-300">
+        <h3 class="font-display font-bold text-white text-lg mb-3">Quick Links</h3>
+        <div><a href="#destinations" class="hover:text-cyan-400 transition">Thailand, Malaysia &amp; Indonesia</a></div>
+        <div><a href="#rules" class="hover:text-cyan-400 transition">Core Visa Rules (9 Mos / 3 Mos / 5 Lakh)</a></div>
+        <div><a href="#visa-finder" class="hover:text-cyan-400 transition">Interactive Visa Document Finder</a></div>
+        <div><a href="#payments" class="hover:text-cyan-400 transition">Easypaisa &amp; Bank Payments</a></div>
+      </div>
+
+      <div class="space-y-3 text-sm">
+        <h3 class="font-display font-bold text-white text-lg">24/7 Contact Desk</h3>
+        <a href="https://wa.me/923148351871" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2.5 text-emerald-400 hover:text-emerald-300 font-bold">
+          <i class="fa-brands fa-whatsapp text-lg"></i> 0314-8351871 (WhatsApp &amp; Phone)
+        </a>
+        <a href="mailto:escapeholidays@gmail.com" class="flex items-center gap-2.5 text-cyan-300 hover:text-cyan-200 font-semibold">
+          <i class="fa-solid fa-envelope"></i> escapeholidays@gmail.com
+        </a>
+        <p class="text-xs text-slate-400">Message anytime — 24/7 replies across all of Pakistan.</p>
+      </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500">
+      <p>&copy; <span id="currentYear"></span> ESCAPE HOLIDAYS. All Rights Reserved.</p>
+      <p>Online Visa &amp; Travel Consultancy • Pakistan</p>
+    </div>
+  </footer>
+
+  <!-- #20 FLOATING WHATSAPP BUTTON WITH EXPANDING PULSE RING + EMAIL QUICK BUTTON -->
+  <div class="fixed bottom-5 right-5 z-50 flex flex-col items-end gap-3">
+    <a href="mailto:escapeholidays@gmail.com?subject=Visa%20Inquiry%20-%20ESCAPE%20HOLIDAYS"
+       aria-label="Email ESCAPE HOLIDAYS"
+       class="w-12 h-12 rounded-full bg-midnight-900 hover:bg-blue-600 text-cyan-300 hover:text-white border border-white/15 shadow-xl flex items-center justify-center transition transform hover:scale-105">
+      <i class="fa-solid fa-envelope text-lg"></i>
+    </a>
+
+    <div class="relative">
+      <span class="wa-radar-ring" aria-hidden="true"></span>
+      <a href="https://wa.me/923148351871?text=Assalam-o-Alaikum%20ESCAPE%20HOLIDAYS!%20I%20want%20to%20inquire%20about%20a%20visa."
+         target="_blank" rel="noopener noreferrer"
+         aria-label="WhatsApp ESCAPE HOLIDAYS 24/7"
+         class="relative inline-flex items-center gap-2.5 bg-emerald-500 hover:bg-emerald-400 text-midnight-950 font-extrabold px-4 py-3.5 rounded-full shadow-2xl transition transform hover:scale-105">
+        <i class="fa-brands fa-whatsapp text-2xl"></i>
+        <span class="hidden sm:inline text-sm pr-1">WhatsApp 24/7</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- INTERACTIVE ANIMATION ENGINE (JS) -->
+  <script>
+    // Set copyright year
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+    // Mobile drawer toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenuDrawer = document.getElementById('mobileMenuDrawer');
+    mobileMenuBtn.addEventListener('click', () => mobileMenuDrawer.classList.toggle('hidden'));
+    document.querySelectorAll('.mob-link').forEach(link => {
+      link.addEventListener('click', () => mobileMenuDrawer.classList.add('hidden'));
+    });
+
+    // =========================================================================
+    // #8 MOUSE & MOBILE TOUCH SPOTLIGHT GLOW + TOUCH RIPPLE BURST
+    // =========================================================================
+    const rootEl = document.documentElement;
+    let pointerPos = { x: null, y: null };
+
+    window.addEventListener('mousemove', (e) => {
+      pointerPos.x = e.clientX;
+      pointerPos.y = e.clientY;
+      rootEl.style.setProperty('--mouse-x', `${e.clientX}px`);
+      rootEl.style.setProperty('--mouse-y', `${e.clientY}px`);
+    }, { passive: true });
+
+    window.addEventListener('touchstart', (e) => {
+      if (e.touches && e.touches.length > 0) {
+        const t = e.touches[0];
+        pointerPos.x = t.clientX;
+        pointerPos.y = t.clientY;
+        rootEl.style.setProperty('--mouse-x', `${t.clientX}px`);
+        rootEl.style.setProperty('--mouse-y', `${t.clientY}px`);
+
+        // Create visual touch glow burst on mobile tap
+        const burst = document.createElement('div');
+        burst.className = 'touch-burst';
+        burst.style.left = `${t.clientX}px`;
+        burst.style.top = `${t.clientY}px`;
+        document.body.appendChild(burst);
+        setTimeout(() => burst.remove(), 760);
+      }
+    }, { passive: true });
+
+    window.addEventListener('touchmove', (e) => {
+      if (e.touches && e.touches.length > 0) {
+        const t = e.touches[0];
+        pointerPos.x = t.clientX;
+        pointerPos.y = t.clientY;
+        rootEl.style.setProperty('--mouse-x', `${t.clientX}px`);
+        rootEl.style.setProperty('--mouse-y', `${t.clientY}px`);
+      }
+    }, { passive: true });
+
+    window.addEventListener('touchend', () => {
+      setTimeout(() => { pointerPos.x = null; pointerPos.y = null; }, 500);
+    }, { passive: true });
+
+    // =========================================================================
+    // #7 INTERACTIVE PARTICLE NETWORK CANVAS (Connects dots & connects to mouse/touch)
+    // =========================================================================
+    (function initParticleNetwork() {
+      const canvas = document.getElementById('particleCanvas');
+      const ctx = canvas.getContext('2d');
+      let width = (canvas.width = window.innerWidth);
+      let height = (canvas.height = window.innerHeight);
+
+      window.addEventListener('resize', () => {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+      });
+
+      const count = Math.min(65, Math.floor((width * height) / 20000));
+      const particles = Array.from({ length: count }, () => ({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        vx: (Math.random() - 0.5) * 0.45,
+        vy: (Math.random() - 0.5) * 0.45,
+        r: Math.random() * 1.8 + 1
+      }));
+
+      function drawParticles() {
+        ctx.clearRect(0, 0, width, height);
+
+        for (let i = 0; i < particles.length; i++) {
+          const p = particles[i];
+          p.x += p.vx;
+          p.y += p.vy;
+
+          if (p.x < 0 || p.x > width) p.vx *= -1;
+          if (p.y < 0 || p.y > height) p.vy *= -1;
+
+          // Draw dot
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx.fillStyle = 'rgba(56, 189, 248, 0.55)';
+          ctx.fill();
+
+          // Connect nearby dots
+          for (let j = i + 1; j < particles.length; j++) {
+            const p2 = particles[j];
+            const dx = p.x - p2.x;
+            const dy = p.y - p2.y;
+            const dist = Math.hypot(dx, dy);
+            if (dist < 125) {
+              ctx.beginPath();
+              ctx.moveTo(p.x, p.y);
+              ctx.lineTo(p2.x, p2.y);
+              ctx.strokeStyle = `rgba(56, 189, 248, ${(1 - dist / 125) * 0.18})`;
+              ctx.lineWidth = 0.8;
+              ctx.stroke();
+            }
+          }
+
+          // Connect dot to mouse/touch pointer when close
+          if (pointerPos.x !== null && pointerPos.y !== null) {
+            const mdx = p.x - pointerPos.x;
+            const mdy = p.y - pointerPos.y;
+            const mDist = Math.hypot(mdx, mdy);
+            if (mDist < 170) {
+              ctx.beginPath();
+              ctx.moveTo(p.x, p.y);
+              ctx.lineTo(pointerPos.x, pointerPos.y);
+              ctx.strokeStyle = `rgba(34, 211, 238, ${(1 - mDist / 170) * 0.45})`;
+              ctx.lineWidth = 1.1;
+              ctx.stroke();
+            }
+          }
+        }
+        requestAnimationFrame(drawParticles);
+      }
+      drawParticles();
+    })();
+
+    // =========================================================================
+    // #9 TOP SCROLL PROGRESS BAR + #12 TIMELINE FILL & STEP ILLUMINATION
+    // =========================================================================
+    const scrollProgressBar = document.getElementById('scrollProgressBar');
+    const timelineContainer = document.getElementById('timelineContainer');
+    const timelineFillLine = document.getElementById('timelineFillLine');
+    const timelineSteps = document.querySelectorAll('.timeline-step');
+
+    function handleScrollAnimations() {
+      // #9 Top progress bar
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPercent = docHeight > 0 ? Math.min(100, (scrollTop / docHeight) * 100) : 0;
+      scrollProgressBar.style.width = `${scrollPercent}%`;
+
+      // #12 Timeline line fill & node illumination
+      if (timelineContainer && timelineFillLine) {
+        const rect = timelineContainer.getBoundingClientRect();
+        const triggerPoint = window.innerHeight * 0.72;
+        const progress = Math.max(0, Math.min(1, (triggerPoint - rect.top) / rect.height));
+        timelineFillLine.style.height = `${progress * 100}%`;
+
+        timelineSteps.forEach((step) => {
+          const stepRect = step.getBoundingClientRect();
+          const node = step.querySelector('.timeline-node');
+          if (stepRect.top < triggerPoint) {
+            step.classList.add('border-cyan-400/50', 'shadow-lg', 'shadow-cyan-500/10');
+            if (node) {
+              node.classList.remove('border-slate-600', 'text-slate-400');
+              node.classList.add('border-cyan-400', 'bg-cyan-400', 'text-midnight-950', 'shadow-[0_0_14px_rgba(34,211,238,0.9)]');
+            }
+          } else {
+            step.classList.remove('border-cyan-400/50', 'shadow-lg', 'shadow-cyan-500/10');
+            if (node) {
+              node.classList.add('border-slate-600', 'text-slate-400');
+              node.classList.remove('border-cyan-400', 'bg-cyan-400', 'text-midnight-950', 'shadow-[0_0_14px_rgba(34,211,238,0.9)]');
+            }
+          }
+        });
+      }
+    }
+    window.addEventListener('scroll', handleScrollAnimations, { passive: true });
+    handleScrollAnimations();
+
+    // =========================================================================
+    // #10 SCROLL REVEAL SECTIONS + #11 ANIMATED COUNTERS (2, 24/7, 3, 9, 3, 5)
+    // =========================================================================
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+
+          // Trigger any counters inside the revealed section
+          entry.target.querySelectorAll('.counter-num').forEach((counter) => {
+            if (counter.dataset.counted) return;
+            counter.dataset.counted = 'true';
+            const target = parseInt(counter.dataset.target, 10);
+            const duration = 1200;
+            const startTime = performance.now();
+
+            function tick(now) {
+              const elapsed = now - startTime;
+              const ratio = Math.min(1, elapsed / duration);
+              const eased = 1 - Math.pow(1 - ratio, 3);
+              counter.textContent = Math.round(eased * target);
+              if (ratio < 1) requestAnimationFrame(tick);
+            }
+            requestAnimationFrame(tick);
+          });
+        }
+      });
+    }, { threshold: 0.14 });
+
+    document.querySelectorAll('.scroll-reveal').forEach((sec) => revealObserver.observe(sec));
+
+    // =========================================================================
+    // #13 3D CARD TILT ON HOVER (Thailand / Malaysia / Indonesia)
+    // =========================================================================
+    document.querySelectorAll('.tilt-card').forEach((card) => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        const rotateX = ((y - centerY) / centerY) * -7;
+        const rotateY = ((x - centerX) / centerX) * 7;
+        card.style.transform = `rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) translateY(-4px)`;
+      });
+
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = 'rotateX(0deg) rotateY(0deg) translateY(0px)';
+      });
+    });
+
+    // =========================================================================
+    // #19 INTERACTIVE VISA FINDER WITH STAGGERED ONE-BY-ONE DOCUMENT LIST
+    // =========================================================================
+    const visaProfiles = {
+      business: {
+        heading: 'Required Documents for Business Owners',
+        waText: 'Assalam-o-Alaikum ESCAPE HOLIDAYS! I am a Business Owner (with NTN & Letterhead) and want to apply for a visa.',
+        docs: [
+          'Recent passport-size photographs (taken within the last 6 months, white background)',
+          'Original Pakistani Passport valid for at least 9 months prior to expiry',
+          'Last 3 months signed & stamped Bank Statement with minimum PKR 5 Lakh (500,000) closing balance',
+          'Official Business Letterhead stating business details & travel purpose',
+          'Valid FBR National Tax Number (NTN) Certificate copy'
+        ]
+      },
+      job: {
+        heading: 'Required Documents for Private Job Holders',
+        waText: 'Assalam-o-Alaikum ESCAPE HOLIDAYS! I am a Private Job Holder and want to send my documents for a visa.',
+        docs: [
+          'Recent passport-size photographs (taken within the last 6 months, white background)',
+          'Original Pakistani Passport valid for at least 9 months prior to expiry',
+          'Last 3 months signed & stamped Bank Statement with minimum PKR 5 Lakh (500,000) closing balance',
+          'Official Employment / Job Letter on company letterhead confirming designation & approved leave'
+        ]
+      },
+      govt: {
+        heading: 'Required Documents for Government Employees',
+        waText: 'Assalam-o-Alaikum ESCAPE HOLIDAYS! I am a Government Employee and want to apply for a visa.',
+        docs: [
+          'Recent passport-size photographs (taken within the last 6 months, white background)',
+          'Original Pakistani Passport valid for at least 9 months prior to expiry',
+          'Last 3 months signed & stamped Bank Statement with minimum PKR 5 Lakh (500,000) closing balance',
+          'Official Government Job Letter / Departmental License / NOC',
+          'Clear copy of valid Government Employee Service Card'
+        ]
+      },
+      family: {
+        heading: 'Required Documents for Families, Singles & Students',
+        waText: 'Assalam-o-Alaikum ESCAPE HOLIDAYS! I want to inquire about Family / Single / Student visa documents.',
+        docs: [
+          'Recent passport-size photographs (taken within the last 6 months) for each traveler',
+          'Original Pakistani Passport(s) valid for at least 9 months prior to expiry',
+          'Last 3 months Bank Statement with minimum PKR 5 Lakh (500,000) closing balance (personal or sponsor)',
+          'For Families: Family Registration Certificate (FRC) or Marriage Certificate (Nikkahnama)',
+          'For Students: Student ID Card / Institute Letter + Sponsor financial documents'
+        ]
+      }
+    };
+
+    function renderVisaDocs(key) {
+      const data = visaProfiles[key];
+      if (!data) return;
+
+      // Update active tab buttons
+      document.querySelectorAll('.vf-btn').forEach((btn) => {
+        btn.classList.remove('bg-gradient-to-r', 'from-blue-600', 'to-cyan-500', 'text-white', 'font-bold', 'shadow-lg');
+        btn.classList.add('bg-white/5', 'text-slate-300', 'font-semibold');
+      });
+      const activeBtn = document.getElementById('vf-btn-' + key);
+      if (activeBtn) {
+        activeBtn.classList.remove('bg-white/5', 'text-slate-300', 'font-semibold');
+        activeBtn.classList.add('bg-gradient-to-r', 'from-blue-600', 'to-cyan-500', 'text-white', 'font-bold', 'shadow-lg');
+      }
+
+      document.getElementById('vfCategoryHeading').textContent = data.heading;
+      document.getElementById('vfWhatsAppLink').href = `https://wa.me/923148351871?text=${encodeURIComponent(data.waText)}`;
+
+      const listEl = document.getElementById('vfDocList');
+      listEl.innerHTML = '';
+
+      data.docs.forEach((docText, index) => {
+        const li = document.createElement('li');
+        li.className = 'doc-stagger-item flex items-start gap-3 p-3.5 rounded-xl bg-white/5 border border-white/10 text-sm text-slate-200';
+        li.style.animationDelay = `${index * 0.09}s`;
+        li.innerHTML = `
+          <i class="fa-solid fa-circle-check text-cyan-400 mt-0.5 shrink-0"></i>
+          <span>${docText}</span>
+        `;
+        listEl.appendChild(li);
+      });
+    }
+
+    // Initialize default Visa Finder list
+    renderVisaDocs('business');
+
+    // =========================================================================
+    // #21 FAQ ACCORDION WITH ROTATING '+' TO '×' ICON
+    // =========================================================================
+    function toggleFaq(buttonEl) {
+      const item = buttonEl.closest('.faq-item');
+      const answer = item.querySelector('.faq-answer');
+      const isOpen = item.classList.contains('faq-open');
+
+      // Close other open FAQs smoothly
+      document.querySelectorAll('.faq-item').forEach((other) => {
+        other.classList.remove('faq-open');
+        other.querySelector('.faq-answer').classList.add('hidden');
+      });
+
+      if (!isOpen) {
+        item.classList.add('faq-open');
+        answer.classList.remove('hidden');
+      }
+    }
+  </script>
+</body>
+</html>

@@ -406,10 +406,33 @@
   <header class="sticky top-0 z-40 bg-midnight-950/80 backdrop-blur-xl border-b border-white/10">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
       
-      <!-- Premium ESCAPE HOLIDAYS logo -->
-      <a href="#" class="flex items-center shrink-0 group focus:outline-none" aria-label="Escape Holidays home">
-        <img src="./assets/escape-holidays-logo.svg" alt="ESCAPE HOLIDAYS — Visa, Travel &amp; Holidays"
-             class="h-[68px] sm:h-[76px] w-auto max-w-[190px] sm:max-w-[220px] object-contain drop-shadow-[0_5px_12px_rgba(245,190,60,0.22)] group-hover:scale-[1.03] transition-transform" />
+      <!-- Custom SVG Logo for ESCAPE HOLIDAYS -->
+      <a href="#" class="flex items-center gap-3 group focus:outline-none">
+        <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-blue-500 via-cyan-400 to-violet-600 p-[1.5px] shadow-lg shadow-cyan-500/20 group-hover:scale-105 transition-transform">
+          <div class="w-full h-full rounded-[14px] bg-midnight-950 flex items-center justify-center">
+            <svg class="w-7 h-7" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="32" cy="32" r="24" stroke="url(#logoGrad)" stroke-width="2.5" />
+              <ellipse cx="32" cy="32" rx="11" ry="24" stroke="#38BDF8" stroke-width="1.5" stroke-dasharray="3 3" />
+              <path d="M12 38C22 28 36 22 52 18" stroke="#F8FAFC" stroke-width="2.2" stroke-linecap="round" />
+              <path d="M54 16L41 21L44.5 24.5L38 30.5L40 32.5L46.5 26.5L50 30L54 16Z" fill="#22D3EE" />
+              <defs>
+                <linearGradient id="logoGrad" x1="8" y1="8" x2="56" y2="56" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#3B82F6" />
+                  <stop offset="0.5" stop-color="#06B6D4" />
+                  <stop offset="1" stop-color="#8B5CF6" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+        </div>
+        <div class="flex flex-col">
+          <span class="font-display font-bold text-xl sm:text-2xl tracking-tight text-white leading-none">
+            ESCAPE <span class="text-cyan-400">HOLIDAYS</span>
+          </span>
+          <span class="text-[10px] uppercase tracking-[0.24em] text-slate-400 font-semibold mt-1">
+            Online Visa &amp; Travel
+          </span>
+        </div>
       </a>
 
       <!-- Desktop Menu (#15 Menu Underline Fill) -->
